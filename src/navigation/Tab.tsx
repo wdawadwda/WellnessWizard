@@ -8,6 +8,8 @@ import {
   StackNavigator,
 } from "./Stack";
 import { Theme } from "../../store/theme/theme.type";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -48,9 +50,9 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => (
       name="FoodTab"
       initialParams={{ initialRoute: "Food" }}
       options={{
-        tabBarLabel: "Главная",
+        tabBarLabel: "Питание",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="home" size={35} color={color} />
+          <MaterialCommunityIcons name="food-apple" size={35} color={color} />
         ),
         headerShown: false,
       }}
@@ -62,9 +64,9 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => (
       name="FitnessTab"
       initialParams={{ initialRoute: "Fitness" }}
       options={{
-        tabBarLabel: "Главная",
+        tabBarLabel: "Фитнес",
         tabBarIcon: ({ color }) => (
-          <AntDesign name="home" size={35} color={color} />
+          <MaterialIcons name="fitness-center" size={35} color={color} />
         ),
         headerShown: false,
       }}

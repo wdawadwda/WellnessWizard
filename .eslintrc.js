@@ -11,7 +11,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: "./tsconfig.json",
   },
   rules: { "prettier/prettier": "error" },
   ignorePatterns: ['.eslintrc.js'],

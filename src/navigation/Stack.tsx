@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? "black" : "white"}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -36,7 +36,7 @@ export const StackNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? "black" : "white"}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -62,7 +62,7 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFitnessNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? "black" : "white"}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator

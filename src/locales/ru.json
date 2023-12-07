@@ -1,0 +1,12 @@
+{
+  "greeting": "Привет",
+  "buttonLabel": "Переключить язык",
+  "homeTitle": "Главная",
+  "switchLanguage": "Сменить язык",
+
+  "tabLabels": {
+    "home": "Главная",
+    "food": "Еда",
+    "fitness": "Тренировки"
+  }
+}

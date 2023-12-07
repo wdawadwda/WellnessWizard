@@ -1,0 +1,12 @@
+{
+  "greeting": "Hello",
+  "buttonLabel": "Switch Language",
+  "homeTitle": "Home",
+  "switchLanguage": "Switch Language",
+  
+  "tabLabels": {
+    "home": "Home",
+    "food": "Food",
+    "fitness": "Fitness"
+  }
+}

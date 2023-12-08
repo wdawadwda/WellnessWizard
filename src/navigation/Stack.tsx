@@ -4,13 +4,19 @@ import { StatusBar } from "react-native";
 import { Theme } from "../../store/theme/theme.type";
 import Fitness from "../screens/Fitness/Fitness";
 import Food from "../screens/Food/Food";
+import * as stylesConstDark from "../entities/const/style/globalDark.style";
+import * as stylesConstLight from "../entities/const/style/globalLight.style";
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "white"}
+      backgroundColor={
+        theme === "dark"
+          ? stylesConstDark.backgroundColor
+          : stylesConstLight.backgroundColor
+      }
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -36,7 +42,11 @@ export const StackNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "white"}
+      backgroundColor={
+        theme === "dark"
+          ? stylesConstDark.backgroundColor
+          : stylesConstLight.backgroundColor
+      }
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -62,7 +72,11 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFitnessNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "white"}
+      backgroundColor={
+        theme === "dark"
+          ? stylesConstDark.backgroundColor
+          : stylesConstLight.backgroundColor
+      }
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator

@@ -7,11 +7,18 @@ const languageDetector = {
   type: "languageDetector",
   async: true,
   detect: (callback) => {
-    const locale =
-      Platform.OS === "ios"
-        ? NativeModules.SettingsManager.settings.AppleLocale ||
-          NativeModules.SettingsManager.settings.AppleLanguages[0]
-        : NativeModules.I18nManager.localeIdentifier;
+    let locale;
+
+    if (Platform.OS === "ios") {
+      locale =
+        NativeModules.SettingsManager.settings.AppleLocale ||
+        NativeModules.SettingsManager.settings.AppleLanguages[0];
+    } else if (Platform.OS === "android") {
+      locale = NativeModules.I18nManager.localeIdentifier;
+    } //TODO: Удалить перед продом: else if (Platform.OS === "web")
+    else if (Platform.OS === "web") {
+      locale = "ru";
+    }
 
     callback(locale.split("_")[0]);
   },

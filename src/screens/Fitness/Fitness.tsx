@@ -3,8 +3,11 @@ import * as styles from "../../entities/styles/global.style";
 import { Layout } from "../../features/Layout/Layout";
 import { Theme } from "../../../store/theme/theme.type";
 import { fontsStyles } from "../../../App";
+import { useTranslation } from "react-i18next";
 
 export default function Fitness({ theme }: { theme: Theme }) {
+  const { t } = useTranslation();
+
   return (
     <Layout theme={theme}>
       <ScrollView
@@ -24,7 +27,7 @@ export default function Fitness({ theme }: { theme: Theme }) {
             { textAlign: "center" },
           ]}
         >
-          Спорт
+          {t("pageTitles.fitness")}
         </Text>
       </ScrollView>
     </Layout>

@@ -19,14 +19,20 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: stylesConstDark.backgroundColorSecond3,
-        tabBarInactiveTintColor: theme === "dark" ? "gray" : "gray",
+        tabBarActiveTintColor:
+          theme === "dark"
+            ? stylesConstDark.backgroundColorSecond
+            : stylesConstLight.backgroundColorSecond,
+        tabBarInactiveTintColor: theme === "dark" ? "white" : "gray",
         tabBarStyle: {
           backgroundColor:
             theme === "dark"
               ? stylesConstDark.backgroundColor
               : stylesConstLight.backgroundColor,
-          borderTopColor: stylesConstDark.backgroundColorSecond3,
+          borderTopColor:
+            theme === "dark"
+              ? stylesConstDark.backgroundColorSecond
+              : stylesConstLight.backgroundColorSecond,
           height: 75,
         },
         tabBarLabelStyle: {
@@ -39,7 +45,7 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="HomeTab"
         initialParams={{ initialRoute: "Home" }}
         options={{
-          tabBarLabel: t("tabLabels.home"), // Используйте t для перевода
+          tabBarLabel: t("tabLabels.home"),
           tabBarIcon: ({ color }) => (
             <AntDesign name="home" size={35} color={color} />
           ),
@@ -53,7 +59,7 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="FoodTab"
         initialParams={{ initialRoute: "Food" }}
         options={{
-          tabBarLabel: t("tabLabels.food"), // Используйте t для перевода
+          tabBarLabel: t("tabLabels.food"),
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="food-apple" size={35} color={color} />
           ),
@@ -67,7 +73,7 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="FitnessTab"
         initialParams={{ initialRoute: "Fitness" }}
         options={{
-          tabBarLabel: t("tabLabels.fitness"), // Используйте t для перевода
+          tabBarLabel: t("tabLabels.fitness"),
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="fitness-center" size={35} color={color} />
           ),

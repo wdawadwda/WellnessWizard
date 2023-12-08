@@ -27,7 +27,7 @@ export const darkStyles = StyleSheet.create({
     color: stylesConstDark.textSecondColor,
   },
   text2: {
-    color: stylesConstDark.textSecond3Color,
+    color: stylesConstDark.textColor,
   },
 });
 

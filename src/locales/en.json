@@ -3,9 +3,15 @@
   "buttonLabel": "Switch Language",
   "homeTitle": "Home",
   "switchLanguage": "Switch Language",
-  
+
+  "buttonsTitles": {
+  },
   "tabLabels": {
     "home": "Home",
+    "food": "Food",
+    "fitness": "Fitness"
+  },
+  "pageTitles": {
     "food": "Food",
     "fitness": "Fitness"
   }

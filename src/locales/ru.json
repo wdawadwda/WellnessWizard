@@ -4,9 +4,15 @@
   "homeTitle": "Главная",
   "switchLanguage": "Сменить язык",
 
+  "buttonsTitles": {
+  },
   "tabLabels": {
     "home": "Главная",
     "food": "Еда",
     "fitness": "Тренировки"
+  },
+  "pageTitles": {
+    "food": "Еда",
+    "fitness": "Фитнес"
   }
 }

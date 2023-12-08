@@ -19,7 +19,12 @@ export const LangSwitcher = ({ theme }: { theme: Theme }) => {
       <Picker
         style={[
           theme === "dark" ? styles.darkStyles.text1 : styles.lightStyles.text1,
-          { width: 100 },
+          {
+            width: 100,
+            justifyContent: "center",
+            alignItems: "center",
+            alignSelf: "flex-start",
+          },
         ]}
         dropdownIconColor={
           theme === "dark"

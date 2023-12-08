@@ -26,7 +26,7 @@ export const Header = ({ theme }: HeaderProps) => {
           source={require("../../../assets/logo/logo.png")}
         />
       </TouchableOpacity>
-      <View style={{ flexDirection: "row" }}>
+      <View style={stylesHeader.switchersWrapper}>
         <LangSwitcher theme={theme} />
         <ToggleTheme theme={theme} />
       </View>

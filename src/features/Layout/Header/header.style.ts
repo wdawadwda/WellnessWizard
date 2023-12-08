@@ -23,4 +23,9 @@ export const stylesHeader = StyleSheet.create({
     height: "100%",
     resizeMode: "contain",
   },
+  switchersWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 });

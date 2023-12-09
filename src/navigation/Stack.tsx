@@ -6,17 +6,14 @@ import Fitness from "../screens/Fitness/Fitness";
 import Food from "../screens/Food/Food";
 import * as stylesConstDark from "../entities/const/style/globalDark.style";
 import * as stylesConstLight from "../entities/const/style/globalLight.style";
+import Analyzers from "../screens/Analyzers/Analyzers";
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={
-        theme === "dark"
-          ? stylesConstDark.backgroundColor
-          : stylesConstLight.backgroundColor
-      }
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -42,11 +39,7 @@ export const StackNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={
-        theme === "dark"
-          ? stylesConstDark.backgroundColor
-          : stylesConstLight.backgroundColor
-      }
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -65,6 +58,14 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
       >
         {() => <Food theme={theme} />}
       </Stack.Screen>
+      <Stack.Screen
+        name="Analyzers"
+        options={{
+          headerShown: false,
+        }}
+      >
+        {() => <Analyzers theme={theme} />}
+      </Stack.Screen>
     </Stack.Navigator>
   </>
 );
@@ -72,11 +73,7 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFitnessNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={
-        theme === "dark"
-          ? stylesConstDark.backgroundColor
-          : stylesConstLight.backgroundColor
-      }
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator

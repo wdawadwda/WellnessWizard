@@ -1,10 +1,7 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 
 import { ButtonProps } from "./button.type";
-import {
-  backgroundColorSecond3,
-  textColor,
-} from "../../entities/const/style/globalDark.style";
+import { backgroundColorSecond, textColor } from "../../../entities/const/style/globalDark.style";
 
 export const Button = ({ children, onPress, style, disabled }: ButtonProps) => {
   return (
@@ -27,7 +24,7 @@ export const Button = ({ children, onPress, style, disabled }: ButtonProps) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: backgroundColorSecond3,
+    backgroundColor: backgroundColorSecond,
     padding: 10,
     borderRadius: 5,
     alignItems: "center",

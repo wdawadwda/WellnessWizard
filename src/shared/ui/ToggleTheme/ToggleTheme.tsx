@@ -1,10 +1,10 @@
 import { View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
-import * as stylesConstDark from "../../entities/const/style/globalDark.style";
-import * as stylesConstLight from "../../entities/const/style/globalLight.style";
-import { Theme } from "../../../store/theme/theme.type";
-import { themeActions } from "../../../store/theme/theme.slice";
+import * as stylesConstDark from "../../../entities/const/style/globalDark.style";
+import * as stylesConstLight from "../../../entities/const/style/globalLight.style";
+import { Theme } from "../../../../store/theme/theme.type";
+import { themeActions } from "../../../../store/theme/theme.slice";
 import { Button } from "../Button/Button";
 
 export const ToggleTheme = ({ theme }: { theme: Theme }) => {
@@ -18,10 +18,7 @@ export const ToggleTheme = ({ theme }: { theme: Theme }) => {
     <View>
       <Button
         style={{
-          backgroundColor:
-            theme === "dark"
-              ? stylesConstDark.backgroundColor
-              : stylesConstLight.backgroundColor,
+          backgroundColor: theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor,
           padding: 10,
           borderRadius: 50,
           justifyContent: "center",

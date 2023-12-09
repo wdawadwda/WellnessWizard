@@ -11,18 +11,11 @@ export default function Fitness({ theme }: { theme: Theme }) {
   return (
     <Layout theme={theme}>
       <ScrollView
-        style={[
-          theme === "dark"
-            ? styles.darkStyles.container
-            : styles.lightStyles.container,
-          styles.styles.container,
-        ]}
+        style={[theme === "dark" ? styles.darkStyles.container : styles.lightStyles.container, styles.styles.container]}
       >
         <Text
           style={[
-            theme === "dark"
-              ? styles.darkStyles.text1
-              : styles.lightStyles.text1,
+            theme === "dark" ? styles.darkStyles.text1 : styles.lightStyles.text1,
             fontsStyles.text,
             { textAlign: "center" },
           ]}

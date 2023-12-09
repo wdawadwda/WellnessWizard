@@ -2,11 +2,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as stylesConstDark from "../entities/const/style/globalDark.style";
 import * as stylesConstLight from "../entities/const/style/globalLight.style";
-import {
-  StackFitnessNavigator,
-  StackFoodNavigator,
-  StackNavigator,
-} from "./Stack";
+import { StackFitnessNavigator, StackFoodNavigator, StackNavigator } from "./Stack";
 import { Theme } from "../../store/theme/theme.type";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -20,19 +16,12 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor:
-          theme === "dark"
-            ? stylesConstDark.backgroundColorSecond
-            : stylesConstLight.backgroundColorSecond,
+          theme === "dark" ? stylesConstDark.backgroundColorSecond : stylesConstLight.backgroundColorSecond,
         tabBarInactiveTintColor: theme === "dark" ? "white" : "gray",
         tabBarStyle: {
-          backgroundColor:
-            theme === "dark"
-              ? stylesConstDark.backgroundColor
-              : stylesConstLight.backgroundColor,
+          backgroundColor: theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor,
           borderTopColor:
-            theme === "dark"
-              ? stylesConstDark.backgroundColorSecond
-              : stylesConstLight.backgroundColorSecond,
+            theme === "dark" ? stylesConstDark.backgroundColorSecond : stylesConstLight.backgroundColorSecond,
           height: 75,
         },
         tabBarLabelStyle: {
@@ -45,10 +34,8 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="HomeTab"
         initialParams={{ initialRoute: "Home" }}
         options={{
-          tabBarLabel: t("tabLabels.home"),
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={35} color={color} />
-          ),
+          tabBarLabel: t("tabNavLabels.home"),
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={35} color={color} />,
           headerShown: false,
         }}
       >
@@ -59,10 +46,8 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="FoodTab"
         initialParams={{ initialRoute: "Food" }}
         options={{
-          tabBarLabel: t("tabLabels.food"),
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="food-apple" size={35} color={color} />
-          ),
+          tabBarLabel: t("tabNavLabels.food"),
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="food-apple" size={35} color={color} />,
           headerShown: false,
         }}
       >
@@ -73,10 +58,8 @@ export const TabNavigator = ({ theme }: { theme: Theme }) => {
         name="FitnessTab"
         initialParams={{ initialRoute: "Fitness" }}
         options={{
-          tabBarLabel: t("tabLabels.fitness"),
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="fitness-center" size={35} color={color} />
-          ),
+          tabBarLabel: t("tabNavLabels.fitness"),
+          tabBarIcon: ({ color }) => <MaterialIcons name="fitness-center" size={35} color={color} />,
           headerShown: false,
         }}
       >

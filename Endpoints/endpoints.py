@@ -20,11 +20,13 @@ class WellnessEndpoints:
             :return: List(dict1, ... dictN)
             """
             product_name = request.args['product_name']
-            query = f"SELECT * FROM {variables.database_products_ru_table_name} WHERE product_name LIKE '%{product_name}%'"
-            responses_list = self.db.get_data(query)
-            return jsonify(responses_list)
-
-
+            if product_name:
+                query = f"SELECT * FROM {variables.database_products_ru_table_name} WHERE product_name LIKE '%{product_name}%'"
+                responses_list = self.db.get_data(query)
+                responses_list = self.transform_to_dict(responses_list)
+                return jsonify(responses_list)
+            else:
+                return jsonify({"error": "некорректный запрос"})
 
         app.run(host='localhost', port=int(os.environ.get('PORT', 5000)))
 
@@ -35,7 +37,9 @@ class WellnessEndpoints:
             for field in variables.products_ru_database_fields:
                 response_dict[field] = item[variables.products_ru_database_fields.index((field))]
             responses_list.append(response_dict)
-        return responses_list
+
+
+        return {"amount": len(responses_list), "responses": responses_list}
 
 if __name__ == "__main__":
     w = WellnessEndpoints()

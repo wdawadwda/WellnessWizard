@@ -2,6 +2,7 @@
 backend for WellnessWizard app
 
 Quick start:
+Python ver 3.10.4
 1. pip install -r requirements.txt - install the libraries
 2. python -m main - start project
 

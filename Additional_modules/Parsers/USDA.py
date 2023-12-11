@@ -1,5 +1,5 @@
 import json
-from Variables import variables
+from Additional_modules.Variables import variables
 import requests
 
 class FoodNutrients:

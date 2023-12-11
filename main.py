@@ -1,5 +1,5 @@
-from Endpoints.endpoints import WellnessEndpoints
+from Additional_modules.Parsers.calorizator import Calorizator
 
 if __name__ == "__main__":
-    endp = WellnessEndpoints()
-    endp.main_handlers()
+    c = Calorizator()
+    c.get_products()

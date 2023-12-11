@@ -1,8 +1,8 @@
 import os
 from flask_cors import CORS
 from flask import request, Flask, jsonify
-from Database.database import Database
-from Variables import variables
+from Additional_modules.Database.database import Database
+from Additional_modules.Variables import variables
 
 
 class WellnessEndpoints:
@@ -40,6 +40,8 @@ class WellnessEndpoints:
 
 
         return {"amount": len(responses_list), "responses": responses_list}
+
+
 
 if __name__ == "__main__":
     w = WellnessEndpoints()

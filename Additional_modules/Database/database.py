@@ -1,6 +1,9 @@
 import psycopg2
 import configparser
-from Variables import variables
+
+import unicodedata
+
+from Additional_modules.Variables import variables
 import sqlite3
 
 class Database:
@@ -24,8 +27,8 @@ class Database:
             print("connection is ready")
 
     def SQLiteConnect(self, database="wellness.db"):
-        config = configparser.ConfigParser()
-        config.read("./Settings/config.ini")
+        # config = configparser.ConfigParser()
+        # config.read("./Settings/config.ini")
         self.conn = sqlite3.connect(database)
 
 
@@ -47,6 +50,7 @@ class Database:
 
     def products_table_create(self, table=variables.database_products_ru_table_name):
         query = f"""CREATE TABLE IF NOT EXISTS {table} (
+        id INTEGER PRIMARY KEY,
         product_name VARCHAR, 
         fats NUMERIC, 
         proteins NUMERIC, 
@@ -76,15 +80,16 @@ class Database:
             with self.conn:
                 cur = self.conn.cursor()
                 cur.execute(query)
-                print(query)
+                # print(query)
                 print('executed')
                 return True
         except Exception as e:
-            print(e)
+            print(f"ERROR EXECUTE {query} | {e}")
             return False
 
     def get_data(self, query):
         self.SQLiteConnect()
+        self.products_table_create()
         try:
             with self.conn:
                 cur = self.conn.cursor()
@@ -95,8 +100,8 @@ class Database:
             return False
 
     def save(self, data:dict, table=variables.database_products_ru_table_name, lock_doubles=None):
-        if data['product_name'] == 'Шоколад Ritter Sport белый с цельным лесным орехом':
-            pass
+        if "\xe0" in data['product_name']:
+            data['product_name'] = self.strip_unicode(data['product_name'])
         if "'" in data['product_name']:
             data['product_name'] = "''".join(data['product_name'].split("'"))
         if lock_doubles:
@@ -104,7 +109,7 @@ class Database:
 
             response = self.get_data(query)
             if len(response) > 0:
-                return print("Record exists")
+                return print(f"{data['product_name']} exists")
 
         self.SQLiteConnect()
         self.products_table_create()
@@ -121,6 +126,11 @@ class Database:
         query = f"INSERT INTO {table} ({', '.join(keys)}) VALUES ({values[:-2]})"
         self.query_execute(query)
 
+    def strip_accents(self, text):
+        text = unicodedata.normalize('NFD', text) \
+            .encode('ascii', 'ignore') \
+            .decode("utf-8")
+        return str(text)
 
 if __name__ == "__main__":
     db = Database()

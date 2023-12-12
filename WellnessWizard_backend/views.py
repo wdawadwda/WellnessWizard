@@ -4,20 +4,25 @@ from WellnessWizard_backend.models import ProductsRu
 from WellnessWizard_backend.serializers import ProductsRuSerializer
 from rest_framework.response import Response
 from Additional_modules.Parsers.calorizator import Calorizator
-
+from Additional_modules.Parsers.USDA import FoodNutrients
 
 class ProductsRuView(generics.ListAPIView):
     serializer_class = ProductsRuSerializer
     queryset = ProductsRu.objects.all()
 
     def get(self, request, *args, **kwargs):
-        if 'product_ru' not in request.query_params or not request.query_params['product_ru']:
+        if not len(set(request.query_params.keys()).intersection({'product_ru', 'product_en'})):
+        # if 'product_ru' not in request.query_params or not request.query_params['product_ru']:
             return Response({"error": "Введите один или несколько символов для поиска"})
-        product_keyword = request.query_params['product_ru']
-        print(product_keyword)
-        queryset = ProductsRu.objects.filter(product_name__icontains=product_keyword)
-        serializer = self.get_serializer(queryset, many=True)
-        return Response(serializer.data)
+        if 'product_ru' in request.query_params:
+            queryset = ProductsRu.objects.filter(product_name__icontains=request.query_params['product_ru'])
+            serializer = self.get_serializer(queryset, many=True)
+            return Response(serializer.data)
+        else:
+            usda = FoodNutrients()
+            foods_list = usda.get_USDA_nutrients_by_name(request.query_params['product_en'])
+            return Response(foods_list)
+
 
 class CalorizatorParser(generics.ListAPIView):
     serializer_class = ProductsRuSerializer

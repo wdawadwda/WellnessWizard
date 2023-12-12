@@ -130,6 +130,9 @@ SITE_URL = '/site/'
 SITE_ROOT = os.path.join(BASE_DIR, 'site')
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:19006",
+    "http://localhost:5173",
+    "http://127.0.0.1",
+    "http://localhost",
 ]
+
 

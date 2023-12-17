@@ -11,13 +11,15 @@ const languageDetector = {
 
     if (Platform.OS === "ios") {
       locale =
-        NativeModules.SettingsManager.settings.AppleLocale ||
-        NativeModules.SettingsManager.settings.AppleLanguages[0];
+        NativeModules.SettingsManager.settings.AppleLocale || NativeModules.SettingsManager.settings.AppleLanguages[0];
     } else if (Platform.OS === "android") {
       locale = NativeModules.I18nManager.localeIdentifier;
-    } //TODO: Удалить перед продом: else if (Platform.OS === "web")
-    else if (Platform.OS === "web") {
-      locale = "ru";
+    } else if (Platform.OS === "web") {
+      locale = "en";
+    }
+
+    if (!["en", "ru"].includes(locale.split("_")[0])) {
+      locale = "en";
     }
 
     callback(locale.split("_")[0]);

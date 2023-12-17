@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 import * as stylesConstDark from "../const/style/globalDark.style";
 import * as stylesConstLight from "../const/style/globalLight.style";
+import { fontsStyles } from "../../../App";
+import { Theme } from "../../../store/theme/theme.type";
 
 export const styles = StyleSheet.create({
   safeArea: {
@@ -13,6 +15,31 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingRight: 10,
     paddingLeft: 10,
+  },
+  alert: {
+    textAlign: "center",
+    padding: 5,
+  },
+  input: {
+    width: "100%",
+    backgroundColor: "white",
+    marginBottom: 10,
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 5,
+    textTransform: "lowercase",
+  },
+  inputLabel: {
+    textAlign: "center",
+    textTransform: "capitalize",
+  },
+  picker: {
+    backgroundColor: stylesConstDark.backgroundColorSecond,
+    color: stylesConstDark.textColor,
+    marginBottom: 15,
+    marginTop: 10,
+    borderRadius: 5,
+    padding: 10,
   },
 });
 
@@ -29,6 +56,9 @@ export const darkStyles = StyleSheet.create({
   text2: {
     color: stylesConstDark.textColor,
   },
+  containerAlert: {
+    backgroundColor: stylesConstDark.backgroundAlert,
+  },
 });
 
 export const lightStyles = StyleSheet.create({
@@ -42,6 +72,15 @@ export const lightStyles = StyleSheet.create({
     color: stylesConstLight.textSecondColor,
   },
   text2: {
-    color: stylesConstLight.textColor,
+    color: stylesConstLight.textColor3,
+  },
+  containerAlert: {
+    backgroundColor: stylesConstLight.backgroundAlert,
   },
 });
+
+export const commonTextStyle = (
+  theme: Theme,
+  styleVariant: "text" | "text1" | "text2",
+  textVariant: "title" | "subtitle" | "text" | "text2",
+) => [theme === "dark" ? darkStyles[styleVariant] : lightStyles[styleVariant], fontsStyles[textVariant]];

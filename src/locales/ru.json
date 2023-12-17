@@ -1,18 +1,120 @@
 {
-  "greeting": "Привет",
-  "buttonLabel": "Переключить язык",
-  "homeTitle": "Главная",
-  "switchLanguage": "Сменить язык",
+  "plasholder": "К сожалению, функционал на данный момент недоступен, но мы уже работаем над этим",
 
-  "buttonsTitles": {
-  },
-  "tabLabels": {
+  "tabNavLabels": {
     "home": "Главная",
     "food": "Еда",
     "fitness": "Тренировки"
   },
-  "pageTitles": {
-    "food": "Еда",
-    "fitness": "Фитнес"
+
+  "errors": {
+    "defaultError": "Что-то пошло не так",
+    "notFound": "Не найдено"
+  },
+
+  "titles": {
+    "total": "Итого",
+    "total100": "Итого на 100гр",
+    "calcResult": "Результат расчета"
+  },
+
+  "buttonsTitles": {
+    "calculate": "Рассчитать",
+    "analyzers": {
+      "addProduct": "Добавить продукт",
+      "calcTotal": "Подсчитать общее"
+    }
+  },
+
+  "text":{
+    "analyzersText": {
+      "product": {
+        "inputTitle": {
+          "product": "Название продукта",
+          "productGr":"Вес продукта в граммах"
+        },
+        "gramm": "гр",
+        "cm": "см",
+        "kg": "кг",
+        "protein": "Бел",
+        "fat":  "Жир",
+        "carbohydrates": "Угл",
+        "calories": "Кал",
+        "weight": "Вес",
+        "bmi": "ИМТ"
+      },
+      "biometrics": {
+        "desiredWeight": "желаемый вес",
+        "weightFull": "вес",
+        "height": "рост",
+        "age": "возраст",
+        "male": "Мужчина",
+        "female": "Женщина",
+        "waist": "талия",
+        "wristCircumference": "окружность запястья"
+      },
+      "bodyTypes": {
+        "hypersthenic": "Гиперстеническое",
+        "normosthenic": "Нормостеническое",
+        "asthenic": "Астеническое"
+      },    
+
+      "calorieAnalyzer":{
+        "resultDesc": "Потребление менее 700кал, не рекомендуется",
+        "dailyCalories": "Ваша дневная норма калорий",
+        "calSafeWeightLoss": "Для безопасного похудения, потребляйте",
+        "numberOfFays": "Количество дней до достижения желаемого веса",
+        "selectGender": "Выберите пол",
+        "selectConsumption": "Выберите сокращение калорий",
+        "reduce": "Сократить на",
+        "selectActLevel": "Выберите уровень активности",
+
+        "activityLevel": {
+          "sedentary": "Сидячий образ жизни",
+          "light": "Легкая активность",
+          "moderate": "Средняя активность",
+          "high": "Высокая активность",
+          "veryHigh": "Очень высокая активность"
+        }
+      },
+      "bodyFatAnalyzer": {
+        "basedOnBmi": "Исходя из ИМТ, уровень жира",
+        "basedOnYmca": "Исходя из YMCA, уровень жира",
+        "fatLevelTexts": {
+          "low": "Низкий уровень",
+          "normal": "Нормальный уровень",
+          "high": "Высокий уровень",
+          "unknown": "Не удалось определить уровень жира"
+        }
+      },
+      "idealWeightAlert": "По формуле Devine, идеальный вес: {{idealWeightDevine}} кг\nПо формуле Лоренца, идеальный вес: {{idealWeightLorenz}} кг\nПо формуле ИМТ, идеальный вес: {{idealWeightBMI}} кг",
+      "bodyType": "Ваш тип телосложения"
+    }
+  },
+  
+  "tabButtonsFoodScreen": {
+    "calories": "Контроль калорий",
+    "analyzers": "Анализаторы"
+  },
+
+  "analyzersScreenBtn":{
+    "recipe": "Анализатор рецептов",
+    "calorie": "Анализатор калорий",
+    "bodyFat": "Анализатор процента жира",
+    "idealWeight": "Анализатор идеального веса",
+    "bodyType": "Тип телосложения"
+  },
+
+  "validation": {
+    "base": {
+
+      "mustNumber": "должен быть числом",
+      "cannotBeZero": "не может быть меньше или равен 0",
+      "isRequired": "обязателен для заполнения"
+    },
+    "calorieSchema": {
+      "desWeightMust": "желаемый вес должен быть меньше или равен весу"
+    }
+    
   }
 }

@@ -47,4 +47,8 @@ export const fontsStyles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "Montserrat-Medium",
   },
+  text2: {
+    fontSize: 14,
+    fontFamily: "Montserrat-Medium",
+  },
 });

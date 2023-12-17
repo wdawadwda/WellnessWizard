@@ -1,9 +1,9 @@
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { backgroundColorSecond3 } from "../../entities/const/style/globalDark.style";
+import { backgroundColorSecond } from "../../../entities/const/style/globalDark.style";
 
-const Loader = () => (
+const Loader = ({ size }: { size: number }) => (
   <View style={[styles.container, styles.horizontal]}>
-    <ActivityIndicator size="large" color={backgroundColorSecond3} />
+    <ActivityIndicator size={size} color={backgroundColorSecond} />
   </View>
 );
 
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   horizontal: {
     flexDirection: "row",
     justifyContent: "space-around",
-    padding: 10,
+    padding: 5,
   },
 });
 

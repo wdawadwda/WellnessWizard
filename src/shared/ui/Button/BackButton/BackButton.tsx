@@ -1,6 +1,6 @@
 import { AntDesign } from "@expo/vector-icons";
 import { Button } from "../Button";
-import { BackButtonProps } from "./backButton.type";
+import { type BackButtonProps } from "./backButton.type";
 import { StyleSheet } from "react-native";
 import { backgroundColorSecond, textColor } from "../../../../entities/const/style/globalDark.style";
 
@@ -18,6 +18,5 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     backgroundColor: backgroundColorSecond,
-    marginBottom: 25,
   },
 });

@@ -1,4 +1,4 @@
-import { Theme } from "../../../../store/theme/theme.type";
+import { Theme } from "../../../store/theme/theme.type";
 import { FieldValues, Control, UseFormReturn } from "react-hook-form";
 import { PickerItem } from "../../../features/AnalyzersFeatures/CalorieAnalyzer/calorieAnalyzer.type";
 

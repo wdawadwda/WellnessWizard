@@ -1,5 +1,5 @@
-import { Content } from "../../shared/Tabs/tabs.types";
-import { RenderTabContentProps } from "../../entities/type/renderTabContent.type";
+import { type Content } from "../../shared/Tabs/tabs.types";
+import { type RenderTabContentProps } from "../../entities/type/renderTabContent.type";
 import RecipeAnalyzer from "../../features/AnalyzersFeatures/RecipeAnalyzer/RecipeAnalyzer";
 import CalorieAnalyzer from "../../features/AnalyzersFeatures/CalorieAnalyzer/CalorieAnalyzer";
 import BodyFatAnalyzer from "../../features/AnalyzersFeatures/BodyFatAnalyzer/BodyFatAnalyzer";

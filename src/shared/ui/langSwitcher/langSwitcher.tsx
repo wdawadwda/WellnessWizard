@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { Picker } from "@react-native-picker/picker";
 import * as styles from "../../../entities/styles/global.style";
 import * as stylesConstDark from "../../../entities/const/style/globalDark.style";
@@ -18,7 +18,7 @@ export const LangSwitcher = ({ theme }: { theme: Theme }) => {
         style={[
           theme === "dark" ? styles.darkStyles.text1 : styles.lightStyles.text1,
           {
-            width: 100,
+            width: 110,
             justifyContent: "center",
             alignItems: "center",
             alignSelf: "flex-start",

@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import { FormField, PickerDataItem } from "../calorieAnalyzer.type";
+import { type FormField, type PickerDataItem } from "../calorieAnalyzer.type";
 import { activityLevel, reductionType } from "../calorieAnalyzer.const";
 
 export const useConst = () => {
@@ -7,25 +7,25 @@ export const useConst = () => {
     {
       name: "weight",
       label: `${t("text.analyzersText.biometrics.weightFull")}`,
-      placeholder: `${t("text.analyzersText.biometrics.weightFull")} (${t("text.analyzersText.product.kg")})`,
+      placeholder: `${t("text.analyzersText.product.kg")}`,
       keyboardType: "numeric",
     },
     {
       name: "height",
       label: `${t("text.analyzersText.biometrics.height")}`,
-      placeholder: `${t("text.analyzersText.biometrics.height")} (${t("text.analyzersText.product.cm")})`,
+      placeholder: `${t("text.analyzersText.product.cm")}`,
       keyboardType: "numeric",
     },
     {
       name: "age",
       label: `${t("text.analyzersText.biometrics.age")}`,
-      placeholder: `${t("text.analyzersText.biometrics.age")}`,
+      placeholder: ``,
       keyboardType: "numeric",
     },
     {
       name: "desiredWeight",
       label: `${t("text.analyzersText.biometrics.desiredWeight")}`,
-      placeholder: `${t("text.analyzersText.biometrics.desiredWeight")} (${t("text.analyzersText.product.kg")})`,
+      placeholder: `${t("text.analyzersText.product.kg")}`,
       keyboardType: "numeric",
     },
   ];

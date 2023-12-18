@@ -1,7 +1,7 @@
 import { Image, View } from "react-native";
 import { darkStyles, lightStyles } from "../../../entities/styles/global.style";
 import { stylesHeader } from "./header.style";
-import { HeaderProps } from "./header.type";
+import { type HeaderProps } from "./header.type";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { LangSwitcher } from "../../../shared/ui/langSwitcher/langSwitcher";

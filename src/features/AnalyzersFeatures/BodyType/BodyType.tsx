@@ -3,12 +3,12 @@ import { InputForm } from "../../../shared/ui/InputForm/InputForm";
 import { PickerFrom } from "../../../shared/ui/PickerFrom/PickerFrom";
 import { Control, UseFormReturn, useForm } from "react-hook-form";
 import { Button } from "../../../shared/ui/Button/Button";
-import { Theme } from "../../../../store/theme/theme.type";
+import { Theme } from "../../../store/theme/theme.type";
 import * as yup from "yup";
 import { t } from "i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useConst } from "./use/useConst";
-import { FormData } from "./bodyType.type";
+import { type FormData } from "./bodyType.type";
 
 export default function BodyType({ theme }: { theme: Theme }) {
   const { formFields, pickerData } = useConst();

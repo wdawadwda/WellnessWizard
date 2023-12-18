@@ -1,4 +1,4 @@
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 
 export interface Product {
   product: string;

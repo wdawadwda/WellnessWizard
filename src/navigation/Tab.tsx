@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as stylesConstDark from "../entities/const/style/globalDark.style";
 import * as stylesConstLight from "../entities/const/style/globalLight.style";
 import { StackFitnessNavigator, StackFoodNavigator, StackNavigator } from "./Stack";
-import { Theme } from "../../store/theme/theme.type";
+import { type Theme } from "../store/theme/theme.type";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";

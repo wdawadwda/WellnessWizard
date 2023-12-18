@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import * as styles from "../../../entities/styles/global.style";
 import { Controller } from "react-hook-form";
 import { Picker } from "@react-native-picker/picker";
-import { PickersProps } from "./piker.type";
+import { type PickersProps } from "./piker.type";
 
 export const PickerFrom = ({ pickerData, control, setValue, theme }: PickersProps) => {
   return (

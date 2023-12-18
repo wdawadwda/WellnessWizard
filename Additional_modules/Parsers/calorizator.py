@@ -40,13 +40,29 @@ class Calorizator:
         self.close_chrome()
         print("THE END")
 
-    def get_products_from_page(self):
+    def get_products_from_page(self, source=None, chapter=None):
+        source = source if source else self.browser
         products_cards = []
-        products_cards.extend(self.browser.find_elements(By.XPATH, "//*[@class='odd']"))
-        products_cards.extend(self.browser.find_elements(By.XPATH, "//*[@class='even']"))
-        self.get_data_each_product(products_cards)
+        products_cards.extend(source.find_elements(By.XPATH, "//*[@class='odd']"))
+        products_cards.extend(source.find_elements(By.XPATH, "//*[@class='even']"))
+        self.get_data_each_product(products_cards, chapter=chapter)
 
-    def get_data_each_product(self, products_cards):
+    def get_products_from_pages(self, source=None, chapter=None):
+        source = source if source else self.browser
+        while True:
+            products_cards = []
+            products_cards.extend(source.find_elements(By.XPATH, "//*[@class='odd']"))
+            products_cards.extend(source.find_elements(By.XPATH, "//*[@class='even']"))
+            self.get_data_each_product(products_cards, chapter=chapter)
+
+            try:
+                next_page_element = source.find_element(By.XPATH, "//li [@class='pager-next last']")
+                next_page_element.click()
+            except Exception as ex:
+                print(ex)
+                break
+
+    def get_data_each_product(self, products_cards, chapter=None):
         for item in products_cards:
             data = {}
             product_name = item.find_element(By.CSS_SELECTOR, "td.views-field.views-field-title.active").text
@@ -69,7 +85,13 @@ class Calorizator:
                 if energy:
                     data['energy'] = energy
 
-                self.save_data(data)
+                data['source'] = 'calorizator.ru'
+
+                if chapter:
+                    data['chapter'] = chapter
+                    self.update_data(data)
+                else:
+                    self.save_data(data)
             else:
                 print('No data')
 
@@ -92,6 +114,39 @@ class Calorizator:
                 print('invalid_data:', data)
                 print('page:', self.item)
 
+    def update_data(self, data):
+        while True:
+            response = requests.post(variables.server_domain + variables.update_data_in_ProductRu, json=data)
+            if response.status_code in [200, 201]:
+                break
+            else:
+                print('request:', response.request.body)
+                print('status_code::', response.status_code)
+                print('cause:', response.text)
+                print('invalid_data:', data)
+                print('page:', self.item)
+
+
+    def get_chapters(self):
+        self.init_chrome()
+        self.browser.get('https://calorizator.ru/product')
+        categories = self.browser.find_elements(By.XPATH, "//* [@class='product']")[:-1]
+        chapters_links = {}
+        for category in categories:
+            chapters = category.find_elements(By.TAG_NAME, "li")
+            for chapter in chapters:
+                chapters_links[chapter.text] = chapter.find_element(By.TAG_NAME, 'a').get_attribute('href')
+        for chapter_key in chapters_links:
+            chapter = self.browser.get(chapters_links[chapter_key])
+            products_cards = self.get_products_from_pages(source=chapter, chapter=chapter_key)
+            pass
+            pass
+
+
+
+
+
+
 if __name__ == '__main__':
     c = Calorizator()
-    c.get_products()
+    c.get_chapters()

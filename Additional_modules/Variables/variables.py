@@ -20,10 +20,19 @@ products_ru_database_fields = ["product_name", "fats", "proteins", "carbohydrate
 
 
 #------------- server -------------
-server_domain = "http://localhost:8000"
-save_data_to_ProductRu = '/save-product/'
+server_domain = "http://localhost:8000/"
+update_base_from_calorizator = "update-calorizator-database/"
+update_base_from_calorizator_with_chapters = "update-calorizator-chapters-database/"
+update_usda_database = 'update-usda-database/'
+update_beregifiguru_database = 'update-beregifiguru-database/'
+
+save_data_to_ProductRu = 'save-product/'
+update_data_in_ProductRu = 'update-product/'
 save_USDA_products = 'save-USDA-product/'
 
+search_products = 'search_product/'
+
+limit_responses = 10
 
 #------------- Chrome -------------
 options = Options()

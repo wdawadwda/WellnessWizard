@@ -7,12 +7,14 @@ from WellnessWizard_backend.views import *
 from Additional_modules.Variables import variables
 
 urlpatterns = [
-    path('search_product/', ProductsRuView.as_view()),
-    path('update-calorizator-database/', CalorizatorParser.as_view()),
-    path('update-usda-database/', USDA_parser.as_view()),
-    path('save-product/', SaveProductView.as_view()),
-    path(variables.save_USDA_products, USDABaseView.as_view()),
-    path('update-beregifiguru-database/', BeregiFiguruParserView.as_view()),
+    path(variables.update_base_from_calorizator, CalorizatorParser.as_view()), # get products data from calorizator.ru
+    path(variables.update_base_from_calorizator_with_chapters, CalorizatorChapterParser.as_view()), # get products data with chapters from calorizator.ru
+    path(variables.update_usda_database, USDA_parser.as_view()), # get products data from USDA base
+    path(variables.save_USDA_products, USDABaseView.as_view()), # get products data from USDA base with categories
+    path(variables.update_beregifiguru_database, BeregiFiguruParserView.as_view()), # get products data from calorizator.ru
+    path(variables.save_data_to_ProductRu, SaveProductView.as_view()), # save data
+    path(variables.update_data_in_ProductRu, UpdateProductView.as_view()), # update data
+    path(variables.search_products, ProductsRuView.as_view()),  # get products_from database by keyword
 
     # registration
     path('auth/', include('djoser.urls.authtoken')),

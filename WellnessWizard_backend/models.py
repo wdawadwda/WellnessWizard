@@ -9,6 +9,7 @@ class ProductsRu(models.Model):
     energy = models.FloatField(blank=True, null=True)
     category = models.CharField(max_length=100, blank=True, null=True)
     source = models.CharField(max_length=100, blank=True, null=True)
+    chapter = models.CharField(max_length=100)
 
     class Meta:
         # managed = False
@@ -25,6 +26,7 @@ class ProductsEn(models.Model):
     energy = models.FloatField(blank=True, null=True)
     category = models.CharField(max_length=100, blank=True, null=True)
     source = models.CharField(max_length=100, blank=True, null=True)
+    chapter = models.CharField(max_length=100)
 
     class Meta:
         # managed = False

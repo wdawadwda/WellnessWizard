@@ -55,7 +55,8 @@ class Database:
         fats NUMERIC, 
         proteins NUMERIC, 
         carbohydrates NUMERIC, 
-        energy NUMERIC
+        energy NUMERIC,
+        category VARCHAR(100)
         );"""
         cur = self.conn.cursor()
         cur.execute(query)
@@ -126,14 +127,23 @@ class Database:
         query = f"INSERT INTO {table} ({', '.join(keys)}) VALUES ({values[:-2]})"
         self.query_execute(query)
 
+    def add_field(self, field_name, field_type):
+        query = f"ALTER TABLE {variables.database_products_en_table_name} ADD COLUMN {field_name} {field_type}"
+        self.query_execute(query)
+
     def strip_accents(self, text):
         text = unicodedata.normalize('NFD', text) \
             .encode('ascii', 'ignore') \
             .decode("utf-8")
         return str(text)
 
+    def fill_empty_source_ru(self):
+        self.SQLiteConnect()
+        query = "UPDATE products_ru SET source='calorizator.ru' WHERE source IS NULL"
+        self.query_execute(query)
+
 if __name__ == "__main__":
     db = Database()
-    pass
+    db.fill_empty_source_ru()
 
 

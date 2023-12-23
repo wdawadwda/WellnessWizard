@@ -224,7 +224,7 @@ DJOSER = {
     #     }
 }
 
-# AUTH_USER_MODEL = 'WellnessWizard_backend.CustomUser'
+AUTH_USER_MODEL = 'WellnessWizard_backend.CustomUser'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -35,11 +35,11 @@ class ProductsEn(models.Model):
     def __str__(self):
         return str(self.product_name)
 
-# class CustomUser(AbstractUser):
-#     email = models.EmailField(db_index=True, unique=True)
-#     USERNAME_FIELD = 'username'
-#     REQUIRED_FIELDS = ['email', 'is_staff']
-#     objects = UserManager()
-#
-#     def __str__(self):
-#         return self.username
+class CustomUser(AbstractUser):
+    email = models.EmailField(db_index=True, unique=True)
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', 'is_staff']
+    objects = UserManager()
+
+    def __str__(self):
+        return self.username

@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const stylesHeader = StyleSheet.create({
   container: {
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -12,10 +13,21 @@ export const stylesHeader = StyleSheet.create({
     paddingBottom: 10,
     marginBottom: 15,
     borderBottomWidth: 1,
-    borderBottomColor: stylesConstDark.backgroundColorSecond3,
+    borderBottomColor: stylesConstDark.backgroundColorSecond,
   },
-  logo: {
+  logoWrapper: {
     width: 70,
     height: 70,
+  },
+  logo: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
+  },
+  switchersWrapper: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
   },
 });

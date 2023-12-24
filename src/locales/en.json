@@ -1,0 +1,144 @@
+{
+  "plasholder": "Unfortunately, the functionality is currently unavailable, but we are already working on it",
+
+  "tabNavLabels": {
+    "home": "Home",
+    "food": "Food",
+    "fitness": "Fitness"
+  },
+
+  "errors": {
+    "defaultError": "Something went wrong",
+    "notFound": "Not found"
+  },
+
+  "titles": {
+    "total": "Total",
+    "total100": "Total per 100g",
+    "calcResult": "Calculation result"
+  },
+
+  "buttonsTitles": {
+    "calculate": "Calculate",
+    "analyzers": {
+      "addProduct": "Add product",
+      "calcTotal": "Calculate total"
+    },
+    "regAuth": {
+      "login": "Sign in",
+      "logout": "logout",
+      "reg": "Sign up"
+    }
+  },
+
+  "text":{
+    "analyzersText": {
+      "product": {
+        "inputTitle": {
+          "product": "Product name",
+          "productGr":"Weight of the product in grams"
+        },
+        "gramm": "g",
+        "cm": "cm",
+        "kg": "kg",
+        "protein": "Prot.",
+        "fat": "Fat",
+        "carbohydrates": "Carbs.",
+        "calories": "cal",
+        "weight": "Wt",
+        "bmi": "BMI"
+      },
+      "biometrics": {
+        "desiredWeight": "desired weight",
+        "weightFull": "weight",
+        "height": "height",
+        "age": "age",
+        "male": "Male",
+        "female": "Female",
+        "waist": "waist",
+        "wristCircumference": "wrist circumference"
+      },
+      "bodyTypes": {
+        "hypersthenic": "Hypersthenic",
+        "normosthenic": "Normosthenic",
+        "asthenic": "Asthenic"
+      },    
+
+      "calorieAnalyzer": {
+        "resultDesc": "Consuming less than 700 calories is not recommended",
+        "dailyCalories": "Your daily calorie intake",
+        "calSafeWeightLoss": "For safe weight loss, consume",
+        "numberOfFays": "Number of days until reaching the desired weight",
+        "selectGender": "Select gender",
+        "selectConsumption": "Select consumption reduction",
+        "reduce": "Reduce by",
+        "selectActLevel": "Select activity level",
+
+        "activityLevel": {
+          "sedentary": "Sedentary lifestyle",
+          "light": "Light activity",
+          "moderate": "Moderate activity",
+          "high": "High activity",
+          "veryHigh": "Very high activity"
+        }
+      },
+      "bodyFatAnalyzer": {
+        "basedOnBmi": "Based on BMI, body fat level",
+        "basedOnYmca": "Based on YMCA, body fat",
+        "fatLevelTexts": {
+          "low": "Low level",
+          "normal": "Normal level",
+          "high": "High level",
+          "unknown": "Unable to determine the fat level"
+        }
+      },
+      "idealWeightAlert": "According to the Devine formula, ideal weight is: {{idealWeightDevine}} kg\nAccording to the Lorenz formula, ideal weight is: {{idealWeightLorenz}} kg\nAccording to the BMI formula, ideal weight is: {{idealWeightBMI}} kg",
+      "bodyType": "Your body type is"
+    }
+  },
+  "tabButtonsFoodScreen": {
+    "calories": "Calorie Control",
+    "analyzers": "analyzers"
+  },
+
+  "analyzersScreenBtn":{
+    "recipe": "Recipe analyzer",
+    "calorie": "Calorie analyzer",
+    "bodyFat": "Body fat analyzer",
+    "idealWeight": "Ideal weight analyzer",
+    "bodyType": "Body type analyzer"
+  },
+
+  "validation": {
+    "base": {
+      "mustNumber": "must be a number",
+      "cannotBeZero": "cannot be less than or equal to 0",
+      "isRequired": "is required"
+    },
+    "calorieSchema": {
+      "desWeightMust": "desired weight must be less than or equal to weight"
+    },
+    "regAuth": {
+      "login": {
+        "usernameRequired": "Enter your username",
+        "passwordRequired": "Enter your password"
+      },
+      "logout": "Logout successful",
+      "reg": {
+        "usernameRequired": "Enter your username",
+        "emailRequired": "Enter your email address",
+        "emailInvalid": "Enter a valid email address",
+        "usernameMinLength": "Username must be at least {{min}} characters long",
+        "passwordRequired": "Enter your password",
+        "passwordMinLength": "Password must be at least {{min}} characters long",
+        "passwordInvalid": "Password must contain at least one letter, one uppercase letter, one lowercase letter, and one digit",
+        "repeatPasswordRequired": "Repeat your password",
+        "repeatPasswordMatch": "Passwords must match"
+      },
+      "username": "username",
+      "email": "email",
+      "password": "password",
+      "repeatPassword": "repeat your password"
+    }
+  }
+}

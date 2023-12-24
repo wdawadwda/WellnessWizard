@@ -1,20 +1,21 @@
 import { StyleSheet, View } from "react-native";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { store } from "./src/store/store";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { styles } from "./src/entities/styles/global.style";
 import { Navigation } from "./src/navigation/Navigation";
+import { useFonts } from "expo-font";
 
 export default function App() {
-  // const [fontsLoaded] = useFonts({
-  //   "Roboto-Regular": require("./src/fonts/Roboto-Regular.ttf"),
-  //   "Roboto-Bold": require("./src/fonts/Roboto-Bold.ttf"),
-  //   "PlayfairDisplay-VariableFont_wght": require("./src/fonts/PlayfairDisplay-VariableFont_wght.ttf"),
-  // });
+  const [fontsLoaded] = useFonts({
+    "Montserrat-Medium": require("./src/fonts/Montserrat-Medium.ttf"),
+    "Montserrat-SemiBold": require("./src/fonts/Montserrat-SemiBold.ttf"),
+    "Montserrat-Bold": require("./src/fonts/Montserrat-Bold.ttf"),
+  });
 
-  // if (!fontsLoaded) {
-  //   return null;
-  // }
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <Provider store={store}>
@@ -29,32 +30,25 @@ export default function App() {
 
 export const fontsStyles = StyleSheet.create({
   title: {
-    fontSize: 50,
+    fontSize: 35,
     textAlign: "center",
     marginBottom: 25,
     textTransform: "uppercase",
-    // fontFamily: "Roboto-Bold",
+    fontFamily: "Montserrat-Bold",
   },
   subtitle: {
     fontSize: 25,
     textTransform: "uppercase",
     textAlign: "center",
     marginBottom: 15,
-    // fontFamily: "PlayfairDisplay-VariableFont_wght",
-  },
-  subtitle2: {
-    fontSize: 25,
-    textTransform: "uppercase",
-    textAlign: "center",
-    marginBottom: 15,
-    // fontFamily: "Roboto-Regular",
+    fontFamily: "Montserrat-SemiBold",
   },
   text: {
-    fontSize: 15,
-    // fontFamily: "PlayfairDisplay-VariableFont_wght",
+    fontSize: 18,
+    fontFamily: "Montserrat-Medium",
   },
   text2: {
-    fontSize: 15,
-    // fontFamily: "Roboto-Regular",
+    fontSize: 14,
+    fontFamily: "Montserrat-Medium",
   },
 });

@@ -1,13 +1,13 @@
-export const backgroundColor = "";
-export const backgroundColor2 = "";
+export const backgroundColor = "#E4EACE";
+export const backgroundColorSecond = "#3C8342";
+export const backgroundDisabled = "#004953";
 export const backgroundAlert = "red";
-export const backgroundOther = "";
+export const backgroundLinks = "aqua";
 
-export const textColor = "";
-export const textSecondColor = "";
-export const textSecond2Color = "";
-export const textSecond3Color = "";
-export const textColor2 = "";
+export const textColor = "white";
+export const textSecondColor = "#8AC243";
+export const textColor2 = "gray";
+export const textColor3 = "black";
 export const textAlertColor = "red";
-export const textDisabledColor = "";
-export const textLinks = "";
+export const textDisabledColor = "white";
+export const textLinks = "aqua";

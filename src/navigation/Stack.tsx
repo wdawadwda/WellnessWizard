@@ -1,16 +1,20 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/Home/Home";
 import { StatusBar } from "react-native";
-import { Theme } from "../../store/theme/theme.type";
+import { type Theme } from "../store/theme/theme.type";
 import Fitness from "../screens/Fitness/Fitness";
 import Food from "../screens/Food/Food";
+import * as stylesConstDark from "../entities/const/style/globalDark.style";
+import * as stylesConstLight from "../entities/const/style/globalLight.style";
+import Analyzers from "../screens/Analyzers/Analyzers";
+import RegAuth from "../screens/RegAuth/RegAuth";
 
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -29,6 +33,14 @@ export const StackNavigator = ({ theme }: { theme: Theme }) => (
       >
         {() => <Home theme={theme} />}
       </Stack.Screen>
+      <Stack.Screen
+        name="RegAuth"
+        options={{
+          headerShown: false,
+        }}
+      >
+        {() => <RegAuth theme={theme} />}
+      </Stack.Screen>
     </Stack.Navigator>
   </>
 );
@@ -36,7 +48,7 @@ export const StackNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator
@@ -55,6 +67,14 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
       >
         {() => <Food theme={theme} />}
       </Stack.Screen>
+      <Stack.Screen
+        name="Analyzers"
+        options={{
+          headerShown: false,
+        }}
+      >
+        {() => <Analyzers theme={theme} />}
+      </Stack.Screen>
     </Stack.Navigator>
   </>
 );
@@ -62,7 +82,7 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
 export const StackFitnessNavigator = ({ theme }: { theme: Theme }) => (
   <>
     <StatusBar
-      backgroundColor={theme === "dark" ? "black" : "rgb(82, 82, 82)"}
+      backgroundColor={theme === "dark" ? stylesConstDark.backgroundColor : stylesConstLight.backgroundColor}
       barStyle={theme === "dark" ? "light-content" : "dark-content"}
     />
     <Stack.Navigator

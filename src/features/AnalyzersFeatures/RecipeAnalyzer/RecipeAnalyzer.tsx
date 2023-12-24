@@ -1,8 +1,8 @@
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { useState } from "react";
 import { Button } from "../../../shared/ui/Button/Button";
 import { ProductRow } from "./ProductRow/ProductRow";
-import { Product } from "./recipeAnalyzer.type";
+import { type Product } from "./recipeAnalyzer.type";
 import { initialProduct, initialProductWithWeight } from "./recipeAnalyzer.const";
 import { TotalRow } from "./TotalRow/TotalRow";
 import { t } from "i18next";

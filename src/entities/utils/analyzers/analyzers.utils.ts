@@ -1,4 +1,4 @@
-import { CalcBMR, DaysToReachGoalProps } from "../../type/analyzers/calorieAnalyzer.type";
+import { type CalcBMR, type DaysToReachGoalProps } from "../../type/analyzers/calorieAnalyzer.type";
 
 export const calculateBMR = ({ weight, height, age, gender }: CalcBMR) => {
   const genderMultiplier = gender === "male" ? 5 : -161;

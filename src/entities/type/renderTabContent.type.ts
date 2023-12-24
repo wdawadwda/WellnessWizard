@@ -1,4 +1,4 @@
-import { Theme } from "../../../store/theme/theme.type";
+import { Theme } from "../../store/theme/theme.type";
 
 export type RenderTabContentProps = {
   activeTab: string | null;

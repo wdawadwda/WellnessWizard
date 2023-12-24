@@ -22,12 +22,13 @@ export const InputForm = <T extends FieldValues>({ formFields, formState, theme,
                 value={value ? String(value) : ""}
                 onChangeText={(text) => onChange(text)}
                 keyboardType={field.keyboardType}
+                secureTextEntry={field.secureTextEntry || false}
               />
             )}
             name={field.name as Path<T>}
           />
           {formState.errors && field.name in formState.errors && formState.errors[field.name] && (
-            <View style={styles.darkStyles.containerAlert}>
+            <View style={[styles.darkStyles.containerAlert, { marginBottom: 5 }]}>
               <Text style={[styles.commonTextStyle(theme, "text", "text"), styles.styles.alert]}>
                 {formState.errors[field.name]?.message}
               </Text>

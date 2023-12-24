@@ -1,5 +1,5 @@
 import { type AxiosError } from "axios";
-import { ErrorDetail } from "../../type/api/api.type";
+import { type ErrorDetail } from "../../type/api/api.type";
 
 export function createErrorObject(error: AxiosError<ErrorDetail>) {
   const errorStatus = error.response?.status || "";

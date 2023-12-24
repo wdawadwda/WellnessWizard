@@ -1,12 +1,12 @@
 import { t } from "i18next";
-import { FormField, PickerDataItem } from "../idealWt.type";
+import { type FormField, type PickerDataItem } from "../idealWt.type";
 
 export const useConst = () => {
   const formFields: FormField[] = [
     {
       name: "height",
       label: `${t("text.analyzersText.biometrics.height")}`,
-      placeholder: `${t("text.analyzersText.biometrics.height")} (${t("text.analyzersText.product.cm")})`,
+      placeholder: `${t("text.analyzersText.product.cm")}`,
       keyboardType: "numeric",
     },
   ];

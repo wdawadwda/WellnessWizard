@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import * as stylesConstDark from "../const/style/globalDark.style";
 import * as stylesConstLight from "../const/style/globalLight.style";
 import { fontsStyles } from "../../../App";
-import { Theme } from "../../../store/theme/theme.type";
+import { Theme } from "../../store/theme/theme.type";
 
 export const styles = StyleSheet.create({
   safeArea: {
@@ -27,11 +27,10 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     padding: 10,
     borderRadius: 5,
-    textTransform: "lowercase",
   },
   inputLabel: {
     textAlign: "center",
-    textTransform: "capitalize",
+    textTransform: "uppercase",
   },
   picker: {
     backgroundColor: stylesConstDark.backgroundColorSecond,
@@ -59,6 +58,9 @@ export const darkStyles = StyleSheet.create({
   containerAlert: {
     backgroundColor: stylesConstDark.backgroundAlert,
   },
+  containerSuccess: {
+    backgroundColor: stylesConstDark.backgroundColorSecond,
+  },
 });
 
 export const lightStyles = StyleSheet.create({
@@ -76,6 +78,9 @@ export const lightStyles = StyleSheet.create({
   },
   containerAlert: {
     backgroundColor: stylesConstLight.backgroundAlert,
+  },
+  containerSuccess: {
+    backgroundColor: stylesConstDark.backgroundColorSecond,
   },
 });
 

@@ -1,11 +1,11 @@
 import { Control, UseFormReturn, useForm } from "react-hook-form";
 import * as yup from "yup";
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { InputForm } from "../../../shared/ui/InputForm/InputForm";
 import { Button } from "../../../shared/ui/Button/Button";
 import { t } from "i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormData } from "./bodyFatAnalyzer.type";
+import { type FormData } from "./bodyFatAnalyzer.type";
 import { View } from "react-native";
 import { PickerFrom } from "../../../shared/ui/PickerFrom/PickerFrom";
 import { getFatLevelDescription } from "../../../entities/utils/analyzers/analyzers.utils";

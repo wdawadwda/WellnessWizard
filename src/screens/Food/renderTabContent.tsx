@@ -1,6 +1,6 @@
-import { Content } from "../../shared/Tabs/tabs.types";
+import { type Content } from "../../shared/Tabs/tabs.types";
 import Plasholder from "../../features/Plasholder/Plasholder";
-import { RenderTabContentProps } from "../../entities/type/renderTabContent.type";
+import { type RenderTabContentProps } from "../../entities/type/renderTabContent.type";
 
 export const renderTabContent = ({ activeTab, t, theme }: RenderTabContentProps): Content => {
   switch (activeTab) {

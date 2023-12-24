@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { store } from "./src/store/store";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { styles } from "./src/entities/styles/global.style";
 import { Navigation } from "./src/navigation/Navigation";

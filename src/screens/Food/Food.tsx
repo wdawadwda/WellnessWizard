@@ -1,7 +1,7 @@
 import { ScrollView } from "react-native";
 import * as styles from "../../entities/styles/global.style";
 import { Layout } from "../../features/Layout/Layout";
-import { Theme } from "../../../store/theme/theme.type";
+import { type Theme } from "../../store/theme/theme.type";
 
 import { useTabs } from "../../shared/Tabs/useTabs";
 import { useRedirectLogic } from "../../shared/Tabs/useRedirectLogic";

@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const stylesHeader = StyleSheet.create({
   container: {
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -24,8 +25,9 @@ export const stylesHeader = StyleSheet.create({
     resizeMode: "contain",
   },
   switchersWrapper: {
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   },
 });

@@ -1,11 +1,11 @@
 import { t } from "i18next";
 import { View } from "react-native";
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { Button } from "../../../shared/ui/Button/Button";
 import { Control, UseFormReturn, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { calculateBMR, calculateDaysToReachGoal } from "../../../entities/utils/analyzers/analyzers.utils";
-import { CalorieAnalyzerFormData } from "./calorieAnalyzer.type";
+import { type CalorieAnalyzerFormData } from "./calorieAnalyzer.type";
 import * as yup from "yup";
 import { InputForm } from "../../../shared/ui/InputForm/InputForm";
 import { PickerFrom } from "../../../shared/ui/PickerFrom/PickerFrom";

@@ -3,6 +3,7 @@ export interface TabsProperties {
   tabs: FormState[];
   handleTabClick: (tab: string | null) => void;
   center?: boolean;
+  fixedWidth?: boolean;
 }
 
 export type FormState = string[number];

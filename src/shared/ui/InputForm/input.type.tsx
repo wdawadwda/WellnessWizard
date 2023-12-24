@@ -1,4 +1,4 @@
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { FieldValues, Control } from "react-hook-form";
 
 export type KeyboardType =
@@ -20,6 +20,7 @@ export interface FormField {
   placeholder: string;
   label: string;
   keyboardType: KeyboardType;
+  secureTextEntry?: boolean;
 }
 
 export interface FormInputProps<T extends FieldValues> {

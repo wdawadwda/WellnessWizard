@@ -23,10 +23,13 @@ npm run lint
 Проверка кода и форматирование:
 npm run format
 
-
+Запуск в андроид студио
+для запуска в папке
+android-studio/bin
+./studio.sh
 
 Запуск Бэка
-Запуск venv
+Создание venv
 virtualenv venv
 
 Активация venv

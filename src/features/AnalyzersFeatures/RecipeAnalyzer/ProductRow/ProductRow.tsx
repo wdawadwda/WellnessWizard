@@ -2,9 +2,9 @@ import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import { Controller, useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import Loader from "../../../../shared/ui/Loader/Loader";
-import { ProductRowProps, Suggestion } from "../recipeAnalyzer.type";
+import { type ProductRowProps, type Suggestion } from "../recipeAnalyzer.type";
 import { calculateNutrition } from "./productRow.util";
-import { searchProduct } from "../../../../../store/api/analyzer";
+import { searchProduct } from "../../../../store/api/analyzer";
 import { initialProductWithWeight } from "../recipeAnalyzer.const";
 import { debounce } from "../../../../entities/utils/debounce/debounce";
 import { t } from "i18next";
@@ -88,7 +88,7 @@ export const ProductRow = ({ index, updateRow, theme }: ProductRowProps) => {
       <View style={{ flexDirection: "column" }}>
         <View style={{ flex: 1, marginTop: 10 }}>
           {error ? (
-            <View style={styles.darkStyles.containerAlert}>
+            <View style={[styles.darkStyles.containerAlert, { marginBottom: 10 }]}>
               <Text style={[styles.commonTextStyle(theme, "text", "text"), styles.styles.alert]}>{error}</Text>
             </View>
           ) : null}
@@ -109,7 +109,7 @@ export const ProductRow = ({ index, updateRow, theme }: ProductRowProps) => {
                   onChange(text);
                   handleInputChange(text);
                 }}
-                placeholder={`${t("text.analyzersText.product.inputTitle.product")}`}
+                placeholder={``}
               />
             )}
             name={`product-${index}`}

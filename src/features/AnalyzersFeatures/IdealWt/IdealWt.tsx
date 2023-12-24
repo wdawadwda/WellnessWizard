@@ -4,11 +4,11 @@ import { PickerFrom } from "../../../shared/ui/PickerFrom/PickerFrom";
 import { Control, UseFormReturn, useForm } from "react-hook-form";
 import { Button } from "../../../shared/ui/Button/Button";
 import { useConst } from "./use/useConst";
-import { Theme } from "../../../../store/theme/theme.type";
+import { type Theme } from "../../../store/theme/theme.type";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { t } from "i18next";
-import { FormData } from "./idealWt.type";
+import { type FormData } from "./idealWt.type";
 import {
   calculateIdealWeightDevine,
   calculateIdealWeightLorenz,

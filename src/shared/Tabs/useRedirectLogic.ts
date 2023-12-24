@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { UseRedirectLogicProps } from "./tabs.types";
+import { type UseRedirectLogicProps } from "./tabs.types";
 
 export const useRedirectLogic = ({ content, redirectedRef, handleTabClick, onUnmountValue }: UseRedirectLogicProps) => {
   const navigation = useNavigation();

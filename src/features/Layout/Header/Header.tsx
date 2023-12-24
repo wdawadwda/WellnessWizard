@@ -1,11 +1,11 @@
 import { Image, View } from "react-native";
 import { darkStyles, lightStyles } from "../../../entities/styles/global.style";
 import { stylesHeader } from "./header.style";
-import { HeaderProps } from "./header.type";
+import { type HeaderProps } from "./header.type";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { LangSwitcher } from "../../../shared/ui/langSwitcher/langSwitcher";
 import { ToggleTheme } from "../../../shared/ui/ToggleTheme/ToggleTheme";
+import { LangSwitcher } from "../../../shared/ui/LangSwitcher/LangSwitcher";
 
 export const Header = ({ theme }: HeaderProps) => {
   const navigation = useNavigation();

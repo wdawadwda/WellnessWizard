@@ -1,12 +1,12 @@
 import { t } from "i18next";
-import { FormField, PickerDataItem } from "../bodyType.type";
+import { type FormField, type PickerDataItem } from "../bodyType.type";
 
 export const useConst = () => {
   const formFields: FormField[] = [
     {
       name: "wristCircumference",
       label: `${t("text.analyzersText.biometrics.wristCircumference")}`,
-      placeholder: `${t("text.analyzersText.biometrics.wristCircumference")} (${t("text.analyzersText.product.cm")})`,
+      placeholder: `${t("text.analyzersText.product.cm")}`,
       keyboardType: "numeric",
     },
   ];

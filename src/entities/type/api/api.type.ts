@@ -1,3 +1,11 @@
+export interface User {
+  username: string;
+  id: number;
+  email: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  is_staff: boolean;
+}
+
 export type ErrorDetail = {
   detail: string;
 };
@@ -7,3 +15,18 @@ export interface ErrorObject {
   detail: string;
   message: string;
 }
+
+export interface JWTTokens {
+  access: string;
+  refresh: string;
+}
+
+export interface Access {
+  access: string;
+}
+
+export type UserRequest = {
+  email: string;
+  username: string;
+  password: string;
+};

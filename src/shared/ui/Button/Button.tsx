@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 
-import { ButtonProps } from "./button.type";
+import { type ButtonProps } from "./button.type";
 import { backgroundColorSecond, textColor } from "../../../entities/const/style/globalDark.style";
 
 export const Button = ({ children, onPress, style, disabled }: ButtonProps) => {
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: textColor,
+    textTransform: "uppercase",
   },
   disabled: {
     opacity: 0.5,

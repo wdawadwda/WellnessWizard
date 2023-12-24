@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import { Theme } from "../../../store/theme/theme.type";
+import { type Theme } from "../../store/theme/theme.type";
 import * as styles from "../../entities/styles/global.style";
 import { fontsStyles } from "../../../App";
 import { MaterialIcons } from "@expo/vector-icons";

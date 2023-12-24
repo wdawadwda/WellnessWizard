@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
-import { BASE_URL } from "../../src/entities/const/api/urls";
-import { ErrorDetail } from "../../src/entities/type/api/api.type";
-import { createErrorObject } from "../../src/entities/utils/api/api.utils";
+import { BASE_URL } from "../../entities/const/api/urls";
+import { type ErrorDetail } from "../../entities/type/api/api.type";
+import { createErrorObject } from "../../entities/utils/api/api.utils";
 import i18next from "i18next";
 
 export const searchProduct = async (text: string) => {

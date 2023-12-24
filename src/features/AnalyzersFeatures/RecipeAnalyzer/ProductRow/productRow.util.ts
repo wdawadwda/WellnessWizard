@@ -1,4 +1,4 @@
-import { Product } from "../recipeAnalyzer.type";
+import { type Product } from "../recipeAnalyzer.type";
 
 export const calculateNutrition = (product: Product, weight: number, prevWeight: number) => {
   const { calories, protein, fat, carbs } = product;

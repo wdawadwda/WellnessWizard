@@ -1,7 +1,7 @@
 import { ScrollView, Text } from "react-native";
 import * as styles from "../../entities/styles/global.style";
 import { Layout } from "../../features/Layout/Layout";
-import { Theme } from "../../../store/theme/theme.type";
+import { Theme } from "../../store/theme/theme.type";
 import { fontsStyles } from "../../../App";
 import { useTranslation } from "react-i18next";
 

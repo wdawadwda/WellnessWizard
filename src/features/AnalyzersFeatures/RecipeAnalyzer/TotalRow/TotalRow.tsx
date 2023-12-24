@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { TotalRowProps } from "../recipeAnalyzer.type";
+import { type TotalRowProps } from "../recipeAnalyzer.type";
 import { t } from "i18next";
 import { stylesRecipe } from "../recipeAnalyzer.style";
 import * as styles from "../../../../entities/styles/global.style";

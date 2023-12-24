@@ -23,6 +23,11 @@
     "analyzers": {
       "addProduct": "Добавить продукт",
       "calcTotal": "Подсчитать общее"
+    },
+    "regAuth": {
+      "login": "вход",
+      "logout": "выход",
+      "reg": "регистрация"
     }
   },
 
@@ -114,7 +119,28 @@
     },
     "calorieSchema": {
       "desWeightMust": "желаемый вес должен быть меньше или равен весу"
+    },
+    "regAuth": {
+      "login": {
+        "usernameRequired": "Введите имя пользователя",
+        "passwordRequired": "Введите пароль"
+      },
+      "logout": "Выход выполнен успешно",
+      "reg": {
+        "usernameRequired": "Введите имя пользователя",
+        "emailRequired": "Введите адрес электронной почты",
+        "emailInvalid": "Введите корректный адрес электронной почты",
+        "usernameMinLength": "Имя пользователя должен содержать минимум {{min}} символа(ов)",
+        "passwordRequired": "Введите пароль",
+        "passwordMinLength": "Пароль должен содержать минимум {{min}} символов",
+        "passwordInvalid": "Пароль должен содержать хотя бы одну букву, заглавную букву, строчную букву и цифру",
+        "repeatPasswordRequired": "Повторите пароль",
+        "repeatPasswordMatch": "Пароли должны совпадать"
+      },
+      "username": "имя пользователя",
+      "email": "email",
+      "password": "пароль",
+      "repeatPassword": "повторите пароль"
     }
-    
   }
 }

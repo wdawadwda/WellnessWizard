@@ -21,6 +21,9 @@ export interface FormField {
   label: string;
   keyboardType: KeyboardType;
   secureTextEntry?: boolean;
+  detailText1?: string;
+  detailText2?: string;
+  detail?: boolean;
 }
 
 export interface FormInputProps<T extends FieldValues> {

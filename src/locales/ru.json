@@ -1,6 +1,22 @@
 {
   "plasholder": "К сожалению, функционал на данный момент недоступен, но мы уже работаем над этим",
 
+  "calendar": {
+    "calendarButton": "выбранная дата",
+    "months": [
+      "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ],
+    "monthsShort": [
+      "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"
+    ],
+    "dayNames": [
+      "Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"
+    ],
+    "dayNamesShort": [
+      "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"
+    ]
+  },
+
   "tabNavLabels": {
     "home": "Главная",
     "food": "Еда",
@@ -15,11 +31,13 @@
   "titles": {
     "total": "Итого",
     "total100": "Итого на 100гр",
-    "calcResult": "Результат расчета"
+    "calcResult": "Результат расчета",
+    "settings": "настройки"
   },
 
   "buttonsTitles": {
     "calculate": "Рассчитать",
+    "save": "Сохранить",
     "analyzers": {
       "addProduct": "Добавить продукт",
       "calcTotal": "Подсчитать общее"
@@ -31,8 +49,28 @@
     }
   },
 
-  "text":{
+  "text": {
     "analyzersText": {
+      "calorieControl": {
+        "calories": "калорий",
+        "water": "воды",
+        "settingsAlert": "Установите желаемое количество {{target}} в настройках",
+        "settingsKcalPlasholder": "желаемое кол-во калорий",
+        "settingsKcalDetail": "Вы можете самостоятельно рассчитать количество калорий или воспользоваться нашим 'Анализатором калорий'",
+        "settingsAddWaterPlasholder": "желаемое кол-во стаканов воды",
+        "meals": {
+          "breakfast": "завтрак",
+          "lunch": "обед",
+          "dinner": "ужин",
+          "snack": "перекус",
+          "activity": "активность"
+        }
+      },
+      "сalorieCircle" : {
+        "consumedCalories": "Потреблено: {{consumedCalories}} ккал",
+        "remainingCalories": "Осталось: {{remainingCalories}} ккал",
+        "totalCalories": "Итого: {{totalCalories}} ккал"
+      },
       "product": {
         "inputTitle": {
           "product": "Название продукта",
@@ -44,7 +82,7 @@
         "protein": "Бел",
         "fat":  "Жир",
         "carbohydrates": "Угл",
-        "calories": "Кал",
+        "calories": "Ккал",
         "weight": "Вес",
         "bmi": "ИМТ"
       },
@@ -112,10 +150,14 @@
 
   "validation": {
     "base": {
-
+      "integer": "число должно быть целым",
+      "positive": "число должно быть положительным",
       "mustNumber": "должен быть числом",
       "cannotBeZero": "не может быть меньше или равен 0",
       "isRequired": "обязателен для заполнения"
+    },
+    "addWater": {
+      "maxWaterGlasses": "cлишком много стаканов воды"
     },
     "calorieSchema": {
       "desWeightMust": "желаемый вес должен быть меньше или равен весу"

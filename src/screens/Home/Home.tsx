@@ -9,6 +9,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user/user.slice";
 import { selectUser } from "../../store/user/user.selectors";
+import { KEYS } from "../../entities/const/asyncStorage.const";
 
 export default function Home({ theme }: { theme: Theme }) {
   const navigation = useNavigation();
@@ -46,8 +47,9 @@ export default function Home({ theme }: { theme: Theme }) {
     try {
       const storedData = await AsyncStorage.getAllKeys();
       const filteredData = await AsyncStorage.multiGet([
-        "@wellnessWizard/refresh-token",
-        "@wellnessWizard/access-token",
+        KEYS.USER.REFRESH_TOKEN,
+        KEYS.USER.ACCESS_TOKEN,
+        KEYS.CALORIE_CONTROL.TOTAL_CALORIES,
       ]);
       console.log(user);
       console.log("Data retrieved from AsyncStorage:", storedData);
@@ -59,8 +61,10 @@ export default function Home({ theme }: { theme: Theme }) {
 
   const handleClearStorage = async () => {
     try {
-      await AsyncStorage.removeItem("@wellnessWizard/refresh-token");
-      await AsyncStorage.removeItem("@wellnessWizard/access-token");
+      await AsyncStorage.removeItem(KEYS.USER.REFRESH_TOKEN);
+      await AsyncStorage.removeItem(KEYS.USER.ACCESS_TOKEN);
+      await AsyncStorage.removeItem(KEYS.CALORIE_CONTROL.TOTAL_CALORIES);
+      await AsyncStorage.removeItem(KEYS.CALORIE_CONTROL.AMOUNT_OF_WATER);
       await AsyncStorage.removeItem("storedData");
       console.log("Data cleared from AsyncStorage.");
     } catch (error) {

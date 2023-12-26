@@ -7,6 +7,7 @@ export const backgroundLinks = "aqua";
 export const textColor = "white";
 export const textSecondColor = "#8AC243";
 export const textColor2 = "gray";
+export const textColor2Extra = "#ccc";
 export const textColor3 = "black";
 export const textAlertColor = "red";
 export const textDisabledColor = "white";

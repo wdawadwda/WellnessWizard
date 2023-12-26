@@ -9,7 +9,7 @@ import { themeActions } from "../store/theme/theme.slice";
 import { useAuth } from "../entities/use/useAuth";
 import { useAppDispatch, useAppSelector } from "../store/store.types";
 import { LoaderFetchUser } from "../shared/LoaderFetchUser/LoaderFetchUser";
-import { useLoadTokens } from "../entities/use/useLoadToken";
+import { useloadAsyncInState } from "../entities/use/useloadAsyncInState";
 
 export const Navigation = () => {
   const isInitializing = useAppSelector(
@@ -21,11 +21,12 @@ export const Navigation = () => {
   const dispatch = useAppDispatch();
   const theme: Theme = useSelector(selectTheme);
   useAuth(dispatch);
-  useLoadTokens(dispatch);
+  useloadAsyncInState(dispatch);
 
   useEffect(() => {
     dispatch(themeActions.setTheme(isDark ? "dark" : "light"));
   }, []);
+
   return (
     <NavigationContainer>
       {isInitializing ? <LoaderFetchUser theme={theme} /> : <TabNavigator theme={theme} />}

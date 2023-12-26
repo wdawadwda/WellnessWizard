@@ -16,9 +16,9 @@
 
 Запуск в андроид студио для запуска в папке android-studio/bin ./studio.sh
 
-Запуск Бэка Создание venv virtualenv venv
+Запуск Бэка Создание virtualenv venv
 
-Активация venv source venv/bin/activate
+Активация окружения source venv/bin/activate
 
 Миграции python manage.py migrate
 

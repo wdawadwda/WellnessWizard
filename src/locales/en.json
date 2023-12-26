@@ -1,5 +1,21 @@
 {
   "plasholder": "Unfortunately, the functionality is currently unavailable, but we are already working on it",
+  "loginAlert": "Authorize to access the functionality",
+  "calendar": {
+    "calendarButton": "selected date",
+    "months": [
+      "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+    ],
+    "monthsShort": [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ],
+    "dayNames": [
+      "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ],
+    "dayNamesShort": [
+      "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+    ]
+  },
 
   "tabNavLabels": {
     "home": "Home",
@@ -12,17 +28,26 @@
     "notFound": "Not found"
   },
 
+  "success": {
+    "success": "Success"
+  },
   "titles": {
     "total": "Total",
     "total100": "Total per 100g",
-    "calcResult": "Calculation result"
+    "calcResult": "Calculation result",
+    "settings": "settings"
   },
 
   "buttonsTitles": {
     "calculate": "Calculate",
+    "save": "save",
+
     "analyzers": {
       "addProduct": "Add product",
-      "calcTotal": "Calculate total"
+      "addExercise": "Add exercise",
+      "addCustomProduct": "Add custom product",
+      "calcTotal": "Calculate total",
+      "saveProduct": "save product"
     },
     "regAuth": {
       "login": "Sign in",
@@ -31,8 +56,35 @@
     }
   },
 
-  "text":{
+  "text": {
     "analyzersText": {
+      "calorieControl": {
+        "calories": "calories",
+        "water": "water",
+        "settingsAlert": "Set your desired amount of {{target}} in settings",
+        "settingsKcalPlasholder": "desired calorie amount",
+        "settingsKcalDetail": "You can calculate the number of calories yourself or use our 'Calorie analyzer'",
+        "settingsAddWaterPlasholder": "Desired quantity of water glasses",
+        "meals": {
+          "breakfast": "breakfast",
+          "lunch": "lunch",
+          "dinner": "dinner",
+          "snack": "snack",
+          "activity": "activity",
+          "exercise": "упражнения"
+        },
+        "custoProd": {
+          "productPlasholder": "Enter the product name"
+        },
+        "activity": {
+          "activityPlasholder": "Enter the exercise name"
+        }
+      },
+      "сalorieCircle" : {
+        "consumedCalories": "Consumed: {{consumedCalories}} kcal",
+        "remainingCalories": "Remaining: {{remainingCalories}} kcal",
+        "totalCalories": "Total: {{totalCalories}} kcal"
+      },
       "product": {
         "inputTitle": {
           "product": "Product name",
@@ -44,7 +96,7 @@
         "protein": "Prot.",
         "fat": "Fat",
         "carbohydrates": "Carbs.",
-        "calories": "cal",
+        "calories": "kcal",
         "weight": "Wt",
         "bmi": "BMI"
       },
@@ -96,6 +148,7 @@
       "bodyType": "Your body type is"
     }
   },
+
   "tabButtonsFoodScreen": {
     "calories": "Calorie Control",
     "analyzers": "analyzers"
@@ -111,9 +164,16 @@
 
   "validation": {
     "base": {
+      "integer": "number must be an integer",
+      "positive": "number must be positive",
       "mustNumber": "must be a number",
       "cannotBeZero": "cannot be less than or equal to 0",
-      "isRequired": "is required"
+      "aboveZero": "enter a number from 0 and above",
+      "isRequired": "is required",
+      "optional": "optional"
+    },
+    "addWater": {
+      "maxWaterGlasses": "too many water glasses"
     },
     "calorieSchema": {
       "desWeightMust": "desired weight must be less than or equal to weight"

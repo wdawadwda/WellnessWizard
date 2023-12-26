@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   text: {
     color: textColor,
     textTransform: "uppercase",
+    textAlign: "center",
   },
   disabled: {
     opacity: 0.5,

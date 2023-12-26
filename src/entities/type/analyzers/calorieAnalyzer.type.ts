@@ -11,3 +11,23 @@ export interface DaysToReachGoalProps {
   dailyCalories: number;
   caloriesForSafeWeightLoss: number;
 }
+
+export interface Product {
+  product: string;
+  weight: number;
+  protein: number;
+  fat: number;
+  carbs: number;
+  calories: number;
+}
+
+export type ProductFormData = Omit<Product, "carbs" | "fat" | "protein"> & {
+  carbs?: number;
+  fat?: number;
+  protein?: number;
+};
+
+export interface Activity {
+  exercise: string;
+  calories: number;
+}

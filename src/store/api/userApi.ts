@@ -7,6 +7,7 @@ import { type User, type ErrorDetail, type UserRequest, type JWTTokens } from ".
 import { createErrorObject } from "../../entities/utils/api/api.utils";
 import { userActions } from "../user/user.slice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { KEYS } from "../../entities/const/asyncStorage.const";
 
 export async function registerUser(signUpData: UserRequest) {
   try {
@@ -66,7 +67,7 @@ export const fetchUser = createAsyncThunk(
 
             // новый токен из ответа сервера
             const newAccessToken = refreshResponse.data.access;
-            await AsyncStorage.setItem("@wellnessWizard/access-token", newAccessToken);
+            await AsyncStorage.setItem(KEYS.USER.ACCESS_TOKEN, newAccessToken);
             // запрос с новым токеном
             const { data } = await axios.get<User>(`${BASE_URL}/auth/users/me/`, {
               signal: thunkAPI.signal,

@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const stylesRecipe = StyleSheet.create({
+  mainContainer: {
+    flexDirection: "column",
+    borderBottomWidth: 2,
+    borderBottomColor: "white",
+    marginBottom: 25,
+  },
   cell: { textAlign: "center" },
   cellWithBorder: {
     textAlign: "center",

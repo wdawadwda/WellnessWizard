@@ -1,13 +1,13 @@
 import { ScrollView, Text } from "react-native";
-import { type Theme } from "../../store/theme/theme.type";
-import * as styles from "../../entities/styles/global.style";
-import { Layout } from "../../features/Layout/Layout";
-import { BackButton } from "../../shared/ui/Button/BackButton/BackButton";
+import { type Theme } from "../../../store/theme/theme.type";
+import * as styles from "../../../entities/styles/global.style";
+import { Layout } from "../../../features/Layout/Layout";
+import { BackButton } from "../../../shared/ui/Button/BackButton/BackButton";
 import { useNavigation } from "@react-navigation/native";
 import { getFoodTabs } from "./analyzers.utils";
-import { useTabs } from "../../shared/Tabs/useTabs";
+import { useTabs } from "../../../shared/Tabs/useTabs";
 import { renderTabContent } from "./renderTabContent";
-import { SliderWithButtons } from "../../shared/Tabs/Tabs";
+import { SliderWithButtons } from "../../../shared/Tabs/Tabs";
 
 export default function Analyzers({ theme }: { theme: Theme }) {
   const navigation = useNavigation();

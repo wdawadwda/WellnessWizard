@@ -2,7 +2,6 @@ export interface User {
   username: string;
   id: number;
   email: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   is_staff: boolean;
 }
 

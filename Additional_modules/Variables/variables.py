@@ -22,9 +22,9 @@ products_ru_database_fields = ["product_name", "fats", "proteins", "carbohydrate
 #------------- server -------------
 server_domain = "http://localhost:8000/"
 update_base_from_calorizator = "update-calorizator-database/"
-update_base_from_calorizator_with_chapters = "update-calorizator-chapters-database/"
+update_base_from_calorizator_with_chapters = "update-calorizator-chapters-database/" # update products_ru with chapter
 update_usda_database = 'update-usda-database/'
-update_beregifiguru_database = 'update-beregifiguru-database/'
+update_beregifiguru_database = 'update-beregifiguru-database/' # update products_ru with chapter
 
 save_data_to_ProductRu = 'save-product/'
 update_data_in_ProductRu = 'update-product/'
@@ -37,4 +37,7 @@ limit_responses = 10
 #------------- Chrome -------------
 options = Options()
 # options.add_argument('--headless')
+
+# ------------- regex --------------
+# separate_request = r"[à-ÿÀ-ßa-zA-Z0-9]{1, }"
 

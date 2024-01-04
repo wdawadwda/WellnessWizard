@@ -51,6 +51,7 @@ class FoodNutrients:
         food_data_list = []
         for item in jsonResponseFoods:
             food_data = {}
+            food_data['source'] = 'USDA'
             food_data['fdcId'] = item['fdcId']
             food_data['product_name'] = item['description']
             food_data['category'] = item['dataType']
@@ -76,7 +77,7 @@ class FoodNutrients:
                 print('Not nutrients')
 
             food_data_list.append(food_data)
-            requests.post(f"{variables.server_domain}/{variables.save_USDA_products}", json=food_data)
+            requests.post(f"{variables.server_domain}{variables.save_USDA_products}", json=food_data)
         return food_data_list
 
     def calories(self, data:dict):

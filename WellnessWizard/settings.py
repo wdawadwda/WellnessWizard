@@ -14,6 +14,8 @@ from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from Additional_modules.Variables import variables
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -43,6 +45,11 @@ INSTALLED_APPS = [
     'djoser',
     'WellnessWizard_backend',
     'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'WellnessWizard.urls'
@@ -234,4 +242,8 @@ EMAIL_HOST_USER = 'ruslanslp19@gmail.com'
 EMAIL_HOST_PASSWORD = 'ldok lvhl jbcg ygic'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL  = 'ruslanslp19@gmail.com'
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "729697270587-69h6117kv8dhsh7h83b4jsl9cb6i02ev.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"
 

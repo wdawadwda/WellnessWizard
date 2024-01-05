@@ -141,6 +141,21 @@ class BeregiFiguruParserView(generics.ListAPIView):
         bregifiguru = Beregifiguru()
         bregifiguru.get_products()
 
+class BeregiFiguruParserChapterView(generics.ListAPIView):
+    serializer_class = ProductsRuSerializer
+    queryset = ProductsRu.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        Response({'message': "Done"})
+        with ThreadPoolExecutor() as executor:
+            executor.submit(self.bregifiguru_parser)
+        return Response({'message': "Done"})
+
+    def bregifiguru_parser(self):
+        bregifiguru = Beregifiguru()
+        bregifiguru.get_chapters()
+
+
 class SaveProductView(generics.ListCreateAPIView):
     serializer_class = ProductsRuSerializer
     queryset = ProductsRu.objects.all()

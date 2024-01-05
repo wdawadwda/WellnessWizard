@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.options import Options
 config = configparser.ConfigParser()
 config.read("./Settings/config.ini")
 # USDA_api_key = config['USDA']['api_key']
-
 USDA_api_key = "vl5XPpYd1iF0LcsdCQ7b6Mccew17sM22NfyedsxW"
 
 # usda_food_searching_by_name = f"https://api.nal.usda.gov/fdc/v1/foods/search?api_key={USDA_api_key}&query="
@@ -25,6 +24,8 @@ update_base_from_calorizator = "update-calorizator-database/"
 update_base_from_calorizator_with_chapters = "update-calorizator-chapters-database/" # update products_ru with chapter
 update_usda_database = 'update-usda-database/'
 update_beregifiguru_database = 'update-beregifiguru-database/' # update products_ru with chapter
+update_beregifiguru_chapter_database = 'update-beregifiguru-chapter-database/'
+google_auth = "dj-rest-auth/google/"
 
 save_data_to_ProductRu = 'save-product/'
 update_data_in_ProductRu = 'update-product/'

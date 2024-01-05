@@ -26,6 +26,7 @@ update_usda_database = 'update-usda-database/'
 update_beregifiguru_database = 'update-beregifiguru-database/' # update products_ru with chapter
 update_beregifiguru_chapter_database = 'update-beregifiguru-chapter-database/'
 google_auth = "dj-rest-auth/google/"
+calorie_control = 'calorie-control/'
 
 save_data_to_ProductRu = 'save-product/'
 update_data_in_ProductRu = 'update-product/'

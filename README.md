@@ -48,3 +48,9 @@ return LIST with the many matched objects
 
 - ### *AUTH via GOOGLE ^/accounts/google/login/*
 
+
+# Calendar data app dashboard start page
+- ### *GET -> Get CustomUser objects with calorie_control field /calorie-control/*
+- ### *PATCH -> Change the calorie_control via user_id: /calorie-control/int:pk/*
+
+

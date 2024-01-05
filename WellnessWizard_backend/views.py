@@ -2,6 +2,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from django.db.models import Q
 from django.db.models.functions import Length
+from django.forms import model_to_dict
 from rest_framework import generics, status
 from Additional_modules.Variables import variables
 from WellnessWizard_backend.models import *
@@ -216,3 +217,13 @@ class USDABaseView(generics.ListCreateAPIView):
             print('exists')
             return Response({'message': 'exists'})
 
+class CalorieControlView(generics.ListCreateAPIView, generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = CalorieControlSerializer
+    queryset = CustomUser.objects.all()
+
+    def patch(self, request, *args, **kwargs):
+        pk = kwargs['pk']
+        CustomUser.objects.filter(id=pk).update(calorie_control=['dd', 'gg'])
+        queryset = CustomUser.objects.get(id=pk)
+        queryset = self.get_serializer(queryset).data
+        return Response(queryset)

@@ -37,6 +37,7 @@ class ProductsEn(models.Model):
 
 class CustomUser(AbstractUser):
     email = models.EmailField(db_index=True, unique=True)
+    calorie_control = models.JSONField(blank=True, null=True)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'is_staff']
     objects = UserManager()

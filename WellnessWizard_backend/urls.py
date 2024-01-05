@@ -16,6 +16,8 @@ urlpatterns = [
     path(variables.search_products, ProductsRuView.as_view()),  # get products_from database by keyword
     path(variables.update_beregifiguru_chapter_database, BeregiFiguruParserChapterView.as_view()), # get products from Beregifiguru chapters
     path('accounts/', include('allauth.urls')),
+    path(f"{variables.calorie_control}", CalorieControlView.as_view()),
+    path(f"{variables.calorie_control}<int:pk>/", CalorieControlView.as_view()),
 
     # registration
     path('auth/', include('djoser.urls.authtoken')),

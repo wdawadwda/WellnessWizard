@@ -222,8 +222,15 @@ class CalorieControlView(generics.ListCreateAPIView, generics.RetrieveUpdateDest
     queryset = CustomUser.objects.all()
 
     def patch(self, request, *args, **kwargs):
-        pk = kwargs['pk']
-        CustomUser.objects.filter(id=pk).update(calorie_control=request.data)
+        user_id = request.data['userId']
+        pk = kwargs['pk'] if kwargs['pk'] == user_id else user_id
+
+        calorie_control = model_to_dict(CustomUser.objects.get(id=pk))['calorie_control']
+        if not calorie_control:
+            calorie_control = {}
+        calorie_control[request.data['selectedDate']] = request.data
+
+        CustomUser.objects.filter(id=pk).update(calorie_control=calorie_control)
         queryset = CustomUser.objects.get(id=pk)
         queryset = self.get_serializer(queryset).data
         return Response(queryset)

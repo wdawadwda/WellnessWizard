@@ -223,7 +223,7 @@ class CalorieControlView(generics.ListCreateAPIView, generics.RetrieveUpdateDest
 
     def patch(self, request, *args, **kwargs):
         pk = kwargs['pk']
-        CustomUser.objects.filter(id=pk).update(calorie_control=['dd', 'gg'])
+        CustomUser.objects.filter(id=pk).update(calorie_control=request.data)
         queryset = CustomUser.objects.get(id=pk)
         queryset = self.get_serializer(queryset).data
         return Response(queryset)

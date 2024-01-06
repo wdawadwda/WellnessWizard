@@ -11,6 +11,7 @@ import { userActions } from "../../store/user/user.slice";
 import { selectUser } from "../../store/user/user.selectors";
 import { KEYS } from "../../entities/const/asyncStorage.const";
 import { selectCalorieControl } from "../../store/calorieControl/calorieControl.selectors";
+import { GoogleSignInScreen } from "../../features/GoogleSignIn/GoogleSignIn";
 
 export default function Home({ theme }: { theme: Theme }) {
   const navigation = useNavigation();
@@ -103,6 +104,7 @@ export default function Home({ theme }: { theme: Theme }) {
         </View>
         {/* Удалить */}
       </ScrollView>
+      <GoogleSignInScreen></GoogleSignInScreen>
     </Layout>
   );
 }

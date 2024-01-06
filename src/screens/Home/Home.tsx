@@ -17,16 +17,8 @@ export default function Home({ theme }: { theme: Theme }) {
   const dispatch = useDispatch();
   const calorieControlState = useSelector(selectCalorieControl);
   const user = useSelector(selectUser);
-  const handlePress = () => {
-    navigation.navigate("RegAuth" as never);
-  };
-
-  const handleLogout = () => {
-    dispatch(userActions.logout());
-  };
 
   //! Удалить
-
   const handleShowUser = async () => {
     console.log(calorieControlState);
     try {
@@ -81,11 +73,12 @@ export default function Home({ theme }: { theme: Theme }) {
         style={[theme === "dark" ? styles.darkStyles.container : styles.lightStyles.container, styles.styles.container]}
       >
         {!user && (
-          <Button onPress={() => handlePress()}>{`${t("buttonsTitles.regAuth.login")} / ${t(
+          <Button onPress={() => navigation.navigate("RegAuth" as never)}>{`${t("buttonsTitles.regAuth.login")} / ${t(
             "buttonsTitles.regAuth.reg",
           )}`}</Button>
         )}
-        {user && <Button onPress={() => handleLogout()}>Logout</Button>}
+        {user && <Button onPress={() => dispatch(userActions.logout())}>Logout</Button>}
+
         {/* Удалить */}
         <View style={{ margin: 50 }}>
           <Button style={{ marginTop: 25 }} onPress={handleSaveToStorage}>

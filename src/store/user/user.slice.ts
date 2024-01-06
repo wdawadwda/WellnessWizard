@@ -1,7 +1,7 @@
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { type ErrorObject, type UserSlice } from "./user.types";
 import { createTokens, fetchUser } from "../api/userApi";
-import { type JWTTokens } from "../../entities/type/api/api.type";
+import { User, type JWTTokens } from "../../entities/type/api/api.type";
 
 const getInitialState = (): UserSlice => {
   return {
@@ -27,6 +27,9 @@ export const userSlice = createSlice({
     },
     updateTokens: (state, action: PayloadAction<JWTTokens>) => {
       state.tokens = { status: "success", data: action.payload };
+    },
+    updateUserSuccess: (state, action: PayloadAction<User>) => {
+      state.currentUser = { status: "success", data: action.payload };
     },
   },
   extraReducers: (builder) => {

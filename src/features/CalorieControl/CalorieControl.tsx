@@ -5,7 +5,7 @@ import { t } from "i18next";
 import { CalorieCircle } from "../../shared/ui/CalorieCircle/CalorieCircle";
 import { textSecondColor } from "../../entities/const/style/globalDark.style";
 import { Button } from "../../shared/ui/Button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as styles from "../../entities/styles/global.style";
 import { AntDesign } from "@expo/vector-icons";
 import Settings from "./Settings/Settings";
@@ -15,19 +15,35 @@ import { selectCalorieControl } from "../../store/calorieControl/calorieControl.
 import { CalendarComponent } from "./CalendarComponent/CalendarComponent";
 import Calories from "./Calories/Calories";
 import { selectUser } from "../../store/user/user.selectors";
+import { useNavigation } from "@react-navigation/native";
+import { selectcalorieControlSavedData } from "../../store/calorieControlSaved/calorieControlSaved.selectors";
 
 export default function CalorieControl({ theme }: { theme: Theme }) {
   const [showSettings, setShowSettings] = useState<boolean>(false);
-  const calorieControlState = useSelector(selectCalorieControl); // это нужно будет получать из юзера
+  const calorieControlState = useSelector(selectCalorieControl);
+  const calorieControlSavedData = useSelector(selectcalorieControlSavedData);
   const user = useSelector(selectUser);
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    console.log("обновление");
+  }, [calorieControlState]);
 
   if (!user) {
     return (
       <View style={{ marginBottom: 50, marginTop: 25 }}>
+        <Button onPress={() => navigation.navigate("RegAuth" as never)}>{`${t("buttonsTitles.regAuth.login")} / ${t(
+          "buttonsTitles.regAuth.reg",
+        )}`}</Button>
         <Text style={[styles.commonTextStyle(theme, "text2", "subtitle"), { marginTop: 25 }]}>{t("loginAlert")}</Text>
       </View>
     );
   }
+
+  const selectedDataFromSaved =
+    calorieControlSavedData !== null && calorieControlState.selectedDate
+      ? calorieControlSavedData[calorieControlState.selectedDate] || null
+      : null;
 
   return (
     <View style={{ marginBottom: 50, marginTop: 25 }}>
@@ -45,19 +61,11 @@ export default function CalorieControl({ theme }: { theme: Theme }) {
       ) : (
         <>
           <CalendarComponent />
-          {calorieControlState.settings.totalCalories ? (
-            <CalorieCircle
-              theme={theme}
-              totalCalories={calorieControlState.settings.totalCalories}
-              consumedCalories={300}
-            />
-          ) : (
-            <Text style={[styles.commonTextStyle(theme, "text2", "subtitle"), { marginTop: 25 }]}>
-              {t("text.analyzersText.calorieControl.settingsAlert", {
-                target: t("text.analyzersText.calorieControl.calories"),
-              })}
-            </Text>
-          )}
+          <CalorieCircle
+            theme={theme}
+            totalCalories={selectedDataFromSaved?.settings?.totalCalories}
+            consumedCalories={300}
+          />
 
           <Calories theme={theme} type={"meals"} title={"breakfast"} />
           <Calories theme={theme} type={"meals"} title={"lunch"} />
@@ -67,11 +75,13 @@ export default function CalorieControl({ theme }: { theme: Theme }) {
           {calorieControlState.settings.amountOfWater ? (
             <AmountWater amountOfWater={calorieControlState.settings.amountOfWater} />
           ) : (
-            <Text style={[styles.commonTextStyle(theme, "text2", "subtitle"), { marginTop: 25 }]}>
-              {t("text.analyzersText.calorieControl.settingsAlert", {
-                target: t("text.analyzersText.calorieControl.water"),
-              })}
-            </Text>
+            <>
+              <Text style={[styles.commonTextStyle(theme, "text2", "subtitle"), { marginTop: 25 }]}>
+                {t("text.analyzersText.calorieControl.settingsAlert", {
+                  target: t("text.analyzersText.calorieControl.water"),
+                })}
+              </Text>
+            </>
           )}
         </>
       )}

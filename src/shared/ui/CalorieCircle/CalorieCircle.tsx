@@ -16,18 +16,20 @@ export const CalorieCircle = ({
   consumedCalories,
   theme,
 }: {
-  totalCalories: number;
+  totalCalories: number | null | undefined;
   consumedCalories: number;
   theme: Theme;
 }) => {
-  const percentage = calculatePercentage(consumedCalories, totalCalories);
+  const actualTotalCalories = totalCalories ?? 0;
+  const percentage = calculatePercentage(consumedCalories, actualTotalCalories);
   const circumference = calculateCircumference(radius);
   const consumedCircumference = calculateConsumedCircumference(percentage, circumference);
-  const remainingCalories = totalCalories - consumedCalories;
+  const remainingCalories = actualTotalCalories - consumedCalories;
+
   return (
     <View style={style.container}>
       <Text style={[styles.commonTextStyle(theme, "text2", "text"), style.text]}>
-        {t("text.analyzersText.сalorieCircle.totalCalories", { totalCalories })}
+        {t("text.analyzersText.сalorieCircle.totalCalories", { totalCalories: actualTotalCalories })}
       </Text>
       <Svg height="200" width="200">
         <Circle cx="100" cy="100" r={radius} stroke={textColor2Extra} strokeWidth={strokeWidth} fill="transparent" />

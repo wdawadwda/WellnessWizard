@@ -27,7 +27,6 @@ export default function Home({ theme }: { theme: Theme }) {
   };
 
   //! Удалить
-
   const handleShowUser = async () => {
     console.log(calorieControlState);
     try {

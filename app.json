@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/logo/logo.png",
         "backgroundColor": "#E4EACE"
-      }
+      },
+      "package": "com.aqua_keksik.WellnessWizard"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "14c16ff1-aab0-43b1-844e-0dcb3d48765d"
+      }
+    },
+    "scheme": "beta"
   }
 }

@@ -1,13 +1,5 @@
+import { type Product } from "../../../entities/type/analyzers/calorieAnalyzer.type";
 import { type Theme } from "../../../store/theme/theme.type";
-
-export interface Product {
-  product: string;
-  weight: number;
-  protein: number;
-  fat: number;
-  carbs: number;
-  calories: number;
-}
 
 export interface TotalRowProps {
   label: string;

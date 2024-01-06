@@ -6,8 +6,9 @@ import Fitness from "../screens/Fitness/Fitness";
 import Food from "../screens/Food/Food";
 import * as stylesConstDark from "../entities/const/style/globalDark.style";
 import * as stylesConstLight from "../entities/const/style/globalLight.style";
-import Analyzers from "../screens/Analyzers/Analyzers";
 import RegAuth from "../screens/RegAuth/RegAuth";
+import AddPosition from "../screens/Food/AddPosition/AddPosition";
+import Analyzers from "../screens/Food/Analyzers/Analyzers";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,15 @@ export const StackFoodNavigator = ({ theme }: { theme: Theme }) => (
         }}
       >
         {() => <Analyzers theme={theme} />}
+      </Stack.Screen>
+
+      <Stack.Screen
+        name="AddPosition"
+        options={{
+          headerShown: false,
+        }}
+      >
+        {() => <AddPosition theme={theme} />}
       </Stack.Screen>
     </Stack.Navigator>
   </>

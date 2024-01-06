@@ -5,7 +5,7 @@ import Loader from "../../../../shared/ui/Loader/Loader";
 import { type ProductRowProps, type Suggestion } from "../recipeAnalyzer.type";
 import { calculateNutrition } from "./productRow.util";
 import { searchProduct } from "../../../../store/api/analyzer";
-import { initialProductWithWeight } from "../recipeAnalyzer.const";
+import { initialProductWithWeight } from "../../../../entities/const/recipeAnalyzer.const";
 import { debounce } from "../../../../entities/utils/debounce/debounce";
 import { t } from "i18next";
 import * as styles from "../../../../entities/styles/global.style";
@@ -84,7 +84,7 @@ export const ProductRow = ({ index, updateRow, theme }: ProductRowProps) => {
   };
 
   return (
-    <View key={index}>
+    <View style={stylesRecipe.mainContainer} key={index}>
       <View style={{ flexDirection: "column" }}>
         <View style={{ flex: 1, marginTop: 10 }}>
           {error ? (
@@ -155,7 +155,6 @@ export const ProductRow = ({ index, updateRow, theme }: ProductRowProps) => {
           <Text style={[styles.commonTextStyle(theme, "text2", "text2"), stylesRecipe.cellWithBorder]}>
             {`${t("text.analyzersText.product.fat")} ${t("text.analyzersText.product.gramm")}`}
           </Text>
-
           <Text style={[styles.commonTextStyle(theme, "text2", "text2"), stylesRecipe.cellWithBorder]}>
             {rowNewData.fat}
           </Text>

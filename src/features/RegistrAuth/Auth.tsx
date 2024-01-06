@@ -14,6 +14,8 @@ import { useSelector } from "react-redux";
 import { selectError, selectTokensStatus } from "../../store/user/user.selectors";
 import { UserRequest } from "../../entities/type/api/api.type";
 import { MessForm } from "../../shared/MessForm/MessForm";
+import { userActions } from "../../store/user/user.slice";
+import { useEffect } from "react";
 
 export default function Auth({ theme }: { theme: Theme }) {
   const dispatch = useAppDispatch();
@@ -56,6 +58,9 @@ export default function Auth({ theme }: { theme: Theme }) {
       console.error("Error while dispatching createTokens:", error);
     }
   };
+  useEffect(() => {
+    dispatch(userActions.clearError());
+  }, []);
 
   return (
     <View style={{ marginBottom: 50, marginTop: 25 }}>

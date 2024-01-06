@@ -1,4 +1,4 @@
-import { type Product } from "./recipeAnalyzer.type";
+import { Product } from "../type/analyzers/calorieAnalyzer.type";
 
 export const initialProduct: Product = {
   product: "",

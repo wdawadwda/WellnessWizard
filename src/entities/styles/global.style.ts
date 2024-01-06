@@ -40,6 +40,10 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
   },
+  textForButtonDetail: {
+    marginBottom: 10,
+    marginTop: 10,
+  },
 });
 
 export const darkStyles = StyleSheet.create({

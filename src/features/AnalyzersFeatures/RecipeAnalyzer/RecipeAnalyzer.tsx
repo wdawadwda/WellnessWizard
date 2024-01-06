@@ -1,14 +1,22 @@
 import { type Theme } from "../../../store/theme/theme.type";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../../shared/ui/Button/Button";
 import { ProductRow } from "./ProductRow/ProductRow";
-import { type Product } from "./recipeAnalyzer.type";
-import { initialProduct, initialProductWithWeight } from "./recipeAnalyzer.const";
+import { initialProduct, initialProductWithWeight } from "../../../entities/const/recipeAnalyzer.const";
 import { TotalRow } from "./TotalRow/TotalRow";
 import { t } from "i18next";
 import { View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { textColor } from "../../../entities/const/style/globalDark.style";
+import { type Product } from "../../../entities/type/analyzers/calorieAnalyzer.type";
 
-export default function RecipeAnalyzer({ theme }: { theme: Theme }) {
+export default function RecipeAnalyzer({
+  theme,
+  onRowsUpdate,
+}: {
+  theme: Theme;
+  onRowsUpdate?: (updatedRows: Product[]) => void;
+}) {
   const [rows, setRows] = useState<Product[]>([initialProduct]);
   const [totalValues, setTotalValues] = useState<Product>({
     ...initialProduct,
@@ -27,6 +35,14 @@ export default function RecipeAnalyzer({ theme }: { theme: Theme }) {
 
   const handleAddProduct = () => {
     setRows((prevRows) => [...prevRows, { ...initialProduct }]);
+  };
+
+  const handleRemoveProduct = (index: number) => {
+    setRows((prevRows) => {
+      const updatedRows = [...prevRows];
+      updatedRows.splice(index, 1);
+      return updatedRows;
+    });
   };
 
   const handleCalculateTotal = () => {
@@ -63,14 +79,29 @@ export default function RecipeAnalyzer({ theme }: { theme: Theme }) {
     setValuesPer100g(newValuesPer100g as Product);
   };
 
+  useEffect(() => {
+    if (onRowsUpdate) {
+      onRowsUpdate(rows);
+    }
+  }, [onRowsUpdate, rows]);
+
   return (
     <View style={{ marginBottom: 50, marginTop: 25 }}>
       {rows.map((row, index) => (
-        <ProductRow theme={theme} key={index} index={index} updateRow={updateRow} />
+        <React.Fragment key={index}>
+          <Button onPress={() => handleRemoveProduct(index)}>
+            <Ionicons name="md-trash-outline" size={25} color={textColor} />
+          </Button>
+          <ProductRow theme={theme} key={index} index={index} updateRow={updateRow} />
+        </React.Fragment>
       ))}
       <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
-        <Button onPress={handleAddProduct}>{t("buttonsTitles.analyzers.addProduct")}</Button>
-        <Button onPress={handleCalculateTotal}>{t("buttonsTitles.analyzers.calcTotal")}</Button>
+        <Button style={{ flex: 0.4 }} onPress={handleAddProduct}>
+          {t("buttonsTitles.analyzers.addProduct")}
+        </Button>
+        <Button style={{ flex: 0.4 }} onPress={handleCalculateTotal}>
+          {t("buttonsTitles.analyzers.calcTotal")}
+        </Button>
       </View>
 
       <TotalRow theme={theme} label={t("titles.total")} values={totalValues} />

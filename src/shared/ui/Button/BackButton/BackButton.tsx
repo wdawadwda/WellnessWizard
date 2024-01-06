@@ -1,10 +1,10 @@
 import { AntDesign } from "@expo/vector-icons";
 import { Button } from "../Button";
-import { type BackButtonProps } from "./backButton.type";
 import { StyleSheet } from "react-native";
 import { backgroundColorSecond, textColor } from "../../../../entities/const/style/globalDark.style";
+import { ExtraButtonsType } from "../../../../entities/type/extraButton.type";
 
-export const BackButton = ({ onPress }: BackButtonProps) => {
+export const BackButton = ({ onPress }: ExtraButtonsType) => {
   return (
     <Button onPress={onPress} style={[styles.buttonContainer]}>
       <AntDesign name="arrowleft" size={25} color={textColor} />

@@ -6,13 +6,14 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ToggleTheme } from "../../../shared/ui/ToggleTheme/ToggleTheme";
 import { LangSwitcher } from "../../../shared/ui/LangSwitcher/LangSwitcher";
+import { HomeScreenNavigationProp } from "../../../navigation/navigation.type";
 
 export const Header = ({ theme }: HeaderProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
     <View style={[theme === "dark" ? darkStyles.container : lightStyles.container, stylesHeader.container]}>
-      <TouchableOpacity style={stylesHeader.logoWrapper} onPress={() => navigation.navigate("Home" as never)}>
+      <TouchableOpacity style={stylesHeader.logoWrapper} onPress={() => navigation.navigate("Home")}>
         <Image style={stylesHeader.logo} source={require("../../../assets/logo/logo.png")} />
       </TouchableOpacity>
       <View style={stylesHeader.switchersWrapper}>
